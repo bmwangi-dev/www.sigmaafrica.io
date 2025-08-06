@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
+
+@layer base {
+  :root {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+    /* Your Custom Colors */
+    --color-primary: #06659b;
+    --color-secondary: #ffffff;
+    --color-transparent: #0000;
+    --color-migenta:#fea300;
+    --color-header-gradient: linear-gradient(90deg, #0a2540, #06659b);
+
+    --color-content: #1a1a1a;
+    --color-background: #ffffff;
+    --color-border: #e0e0e0;
+    --color-accent: var(--color-primary);
+    --color-text-on-primary: var(--color-secondary);
+    --color-text-on-secondary: #1a1a1a;
+  }
+
+  * {
+    @apply border-[var(--color-border)];
+  }
+
+  body {
+    @apply font-sans;
+    background-color: var(--color-background);
+    color: var(--color-content);
+  }
+}
