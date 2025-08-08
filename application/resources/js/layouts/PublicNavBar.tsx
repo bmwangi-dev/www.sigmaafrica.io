@@ -11,7 +11,7 @@ const PublicNavBar: React.FC = () => {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="bg-[var(--color-secondary)] shadow-md relative z-50">
+        <nav className="bg-[var(--color-secondary)] shadow-md relative fixed top-0 left-0 w-full z-50">
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center">
                     <img src={sigmaLogo} alt="Sigma's logo" className="h-16" />
@@ -26,7 +26,7 @@ const PublicNavBar: React.FC = () => {
                 </PrimaryButton>
 
                 <ul className="hidden md:flex gap-6 items-center">
-                    <li><NavItem href="/" active={true} >Home</NavItem></li>
+                    <li><NavItem className="text-" href="/" active={true} >Home</NavItem></li>
                     <li><NavItem href="/" >About Us</NavItem></li>
                     <li><NavItem href="/services.html" >Services</NavItem></li>
                     <li><NavItem href="/community.html" >Community</NavItem></li>
@@ -45,7 +45,7 @@ const PublicNavBar: React.FC = () => {
                     </PrimaryButton>
                 </div>
                 <ul className="flex flex-col gap-4 p-4">
-                    <li><NavItem href="/"  active>Home</NavItem></li>
+                    <li><NavItem href="/" active>Home</NavItem></li>
                     <li><NavItem href="/about.html" >About Us</NavItem></li>
                     <li><NavItem href="/services.html" >Services</NavItem></li>
                     <li><NavItem href="/community.html" >Community</NavItem></li>

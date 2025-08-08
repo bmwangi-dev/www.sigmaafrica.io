@@ -7,6 +7,7 @@
 
     /* Your Custom Colors */
     --color-primary: #06659b;
+    --color-sigma-blue: #0a2540;
     --color-secondary: #ffffff;
     --color-transparent: #0000;
     --color-migenta:#fea300;
@@ -26,7 +27,7 @@
 
   body {
     @apply font-sans;
-    background-color: var(--color-background);
+    background-color: #f7f5f5;
     color: var(--color-content);
   }
 }

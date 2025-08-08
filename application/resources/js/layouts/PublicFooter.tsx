@@ -5,14 +5,14 @@ import PrimaryButton from '@/components/Typography/PrimaryButton';
 
 export default function PublicFooter() {
     return (
-        <footer className="bg-[var(--color-primary)] text-white py-4 text-sm px-4 md:px-4 rounded-t-3xl">
+        <footer className="bg-[var(--color-primary)] text-white py-4 text-sm px-4 md:px-4 rounded-t-3xl mt-4">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-6">
                     <div>
                         <Heading level={2} size="xl" weight="bold" className="mb-2">
                             Sigma <Text as="span" size="xl" weight="bold" className="text-[var(--color-migenta)]">Africa</Text> Accelerate
                         </Heading>
-                        <Text as="p" size="sm" weight="normal">
+                        <Text as="p" size="base" weight="normal">
                             A Nairobi-based data analysis company specializing in data science,
                             consultancy, research, and web development.
                         </Text>
@@ -28,8 +28,8 @@ export default function PublicFooter() {
                                 aria-label="Email"
                                 className="px-3 text-[var(--color-content)] sm:w-auto flex-grow"
                             />
-                            <PrimaryButton type="submit" className="bg-[var(--color-content)]">
-                                Subscribe
+                            <PrimaryButton className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-md font-semibold hover:cursor-pointer hover:bg-[var(--color-migenta)] transition">
+                                Contact Us
                             </PrimaryButton>
                         </form>
                     </div>
@@ -37,13 +37,13 @@ export default function PublicFooter() {
                     <div>
                         <Heading level={3} size="xl" weight="bold" className="font-bold text-base mb-2">Contact Us</Heading>
                         <div className="space-y-2">
-                            <Text as="p" size="sm" weight="normal" className="flex items-center gap-2">
-                                <Phone className="w-4 h-4 text-[var(--color-migenta)]" /> +254746910922
+                            <Text as="p" size="base" weight="normal" className="flex items-center gap-2">
+                                <Phone className="w-4 h-4 text-[var(--color-migenta)]" /> +254(7) 33 910 922
                             </Text>
-                            <Text as="p" size="sm" weight="normal" className="flex items-center gap-2">
+                            <Text as="p" size="base" weight="normal" className="flex items-center gap-2">
                                 <Mail className="w-4 h-4 text-[var(--color-migenta)]" /> sigmanalytics09@gmail.com
                             </Text>
-                            <Text as="p" size="sm" weight="normal" className="flex items-center gap-2">
+                            <Text as="p" size="base" weight="normal" className="flex items-center gap-2">
                                 <Globe className="w-4 h-4 text-[var(--color-migenta)]" /> www.sigma.io
                             </Text>
                         </div>

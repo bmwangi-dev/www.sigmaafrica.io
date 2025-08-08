@@ -24,9 +24,9 @@ const NavItem: React.FC<NavItemProps> = ({
     const isActive = active || url === href;
 
     const defaultClasses = clsx(
-        'inline-block px-4 py-2 text-sm transition duration-200 ease-in-out',
+        'inline-block px-4 py-2 text-base transition duration-200 ease-in-out',
         {
-            'text-gray-500 cursor-not-allowed opacity-50 pointer-events-none': disabled,
+            'text-[var(--color-sigma-blue)] cursor-not-allowed opacity-50 pointer-events-none': disabled,
             'text-[var(--color-migenta)] font-semibold': isActive && !disabled,
             'hover:text-[var(--color-migenta)]': !isActive && !disabled,
         },
