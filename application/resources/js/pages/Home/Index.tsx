@@ -2,6 +2,7 @@ import WhyStudyWithUs from "./Partials/WhyStudyWithUs";
 import { Head } from "@inertiajs/react";
 import { Header } from "@/components/ui/Header";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
+import Testimonials from "@/layouts/Testimonials";
 export default function Index() {
     return (
         <UnauthenticatedLayout>
@@ -16,9 +17,11 @@ export default function Index() {
                 description="Transform industries with data-driven innovation. Partner with us to unlock growth and maximize potential."
                 className={{ background: 'linear-gradient(90deg, #0a2540, #06659b)' }}
                 textColor="text-white"
+                showStatistics={true}
             >
             </Header>
             <WhyStudyWithUs />
+            <Testimonials/>
         </UnauthenticatedLayout>
 
     );

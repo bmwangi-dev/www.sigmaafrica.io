@@ -15,10 +15,12 @@ interface HeaderProps {
     children?: ReactNode;
     backgroundGradient?: string;
     textColor?: string;
+    showStatistics?: boolean;
+    statisticsClassName?: string;
 }
 
 export const Header = ({
-    heading = "Your Heading Here",
+    heading = '',
     subheading = '',
     description = '',
     className = {},
@@ -28,7 +30,9 @@ export const Header = ({
     descriptionClass = "text-sm sm:text-base mt-2",
     children = null,
     backgroundGradient = "linear-gradient(90deg, #0a2540, #06659b)",
-    textColor = "text-white"
+    textColor = "text-white",
+    showStatistics = false,
+    statisticsClassName = "mt-4 sm:mt-12 md:mt-4 lg:mt-2 px-4"
 }: HeaderProps) => {
     const defaultStyles = {
         background: backgroundGradient,
@@ -40,19 +44,37 @@ export const Header = ({
             className={`relative hero pt-4 ${textColor}`}
             style={defaultStyles}
         >
-            <div className={containerClass}>
-                <Heading level={1} size="3xl" weight="bold" className={headingClass}>
+            <div
+                className={`${containerClass} ${showStatistics ? "" : "pb-8"
+                    }`}
+            >
+                <Heading
+                    level={1}
+                    size="3xl"
+                    weight="bold"
+                    className={headingClass}
+                >
                     {heading}
                 </Heading>
 
                 {subheading && (
-                    <Heading level={2} size="lg" weight="semibold" className={subheadingClass}>
+                    <Heading
+                        level={2}
+                        size="lg"
+                        weight="semibold"
+                        className={subheadingClass}
+                    >
                         {subheading}
                     </Heading>
                 )}
 
                 {description && (
-                    <Text as="p" size="lg" weight="thin" className={descriptionClass}>
+                    <Text
+                        as="p"
+                        size="lg"
+                        weight="thin"
+                        className={descriptionClass}
+                    >
                         {description}
                     </Text>
                 )}
@@ -60,9 +82,12 @@ export const Header = ({
                 {children}
             </div>
 
-            <div className="mt-4 sm:mt-12 md:mt-4 lg:mt-2 px-4">
-                <StatisticsCard />
-            </div>
+            {showStatistics && (
+                <div className={statisticsClassName}>
+                    <StatisticsCard />
+                </div>
+            )}
         </section>
+
     );
 };

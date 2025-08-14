@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 @plugin 'tailwindcss-animate';
 
+@import 'keen-slider/keen-slider.min.css';
+
+
 @layer base {
   :root {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
