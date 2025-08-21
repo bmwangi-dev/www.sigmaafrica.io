@@ -14,6 +14,14 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'super_admin' => [
+        'name' => env('SUPER_ADMIN_NAME', 'Sigma Africa'),
+        'email' => env('SUPER_ADMIN_EMAIL', 'admin@sigmaafrica.com'),
+        'password' => env('SUPER_ADMIN_PASSWORD', 'ofnXIFbZ0JOuGBqx'),
+        'is_admin' => true,
+    ],
+
+    'limit_scope_limit' => env('APP_PER_PAGE', 12),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +73,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------

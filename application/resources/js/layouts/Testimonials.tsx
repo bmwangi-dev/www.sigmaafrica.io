@@ -4,6 +4,7 @@ import 'keen-slider/keen-slider.min.css';
 import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import TestimonialVideo from '../../../public/testimonial1.mp4';
+import Avatar from '@/components/ui/Avator';
 
 interface Testimonial {
     video: string;
@@ -11,7 +12,7 @@ interface Testimonial {
     title: string;
     name: string;
     role: string;
-    image: string;
+    image?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -22,7 +23,6 @@ const testimonials: Testimonial[] = [
         title: 'Positive Impact',
         name: 'Nelly Kamau',
         role: 'Alumni',
-        image: '/images/header/student.png',
     },
     {
         video: '/images/testimonial1.mp4',
@@ -31,7 +31,6 @@ const testimonials: Testimonial[] = [
         title: 'Concepts Well Explained',
         name: 'Marion Jepchumba',
         role: 'Alumni',
-        image: '/images/header/student.png',
     },
     {
         video: '/images/testimonial1.mp4',
@@ -40,12 +39,10 @@ const testimonials: Testimonial[] = [
         title: 'Topics Well Explained',
         name: 'Peter Machira',
         role: 'Alumni',
-        image: '/images/header/student.png',
     },
 ];
 
 const Testimonials: React.FC = () => {
-    const sliderRef = useRef<HTMLDivElement | null>(null);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [sliderInstanceRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
@@ -123,12 +120,10 @@ const Testimonials: React.FC = () => {
                                             </Text>
 
                                             <div className="flex items-center pt-4 border-t border-gray-100">
-                                                <div className="relative">
-                                                    <img
-                                                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random&color=fff&size=128&bold=true`}
-                                                        alt={testimonial.name}
-                                                        className="w-14 h-14 rounded-full mr-4 border-2 border-[var(--color-primary)] object-cover"
-                                                    />
+                                                <div className="relative">                                <Avatar
+                                                    name={testimonial.name}
+                                                    image={testimonial.image}
+                                                />
                                                 </div>
                                                 <div>
                                                     <Text weight="bold" className="text-gray-800 text-lg">

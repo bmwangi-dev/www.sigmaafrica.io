@@ -14,7 +14,7 @@ interface NavigationItem {
 
 const PublicNavBar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const { url } = usePage(); // Get current URL from Inertia
+    const { url } = usePage();
 
     const navigationItems: NavigationItem[] = [
         { label: 'Home', href: '/', key: 'home' },
@@ -27,14 +27,11 @@ const PublicNavBar: React.FC = () => {
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
-    // Function to determine if a navigation item is active
     const isActiveRoute = (href: string): boolean => {
-        // Exact match for home page
         if (href === '/' && url === '/') {
             return true;
         }
 
-        // For other pages, check if current URL starts with the href
         if (href !== '/' && url.startsWith(href)) {
             return true;
         }
@@ -42,7 +39,6 @@ const PublicNavBar: React.FC = () => {
         return false;
     };
 
-    // Close mobile menu when clicking on a nav item
     const handleNavItemClick = () => {
         setMenuOpen(false);
     };
@@ -62,7 +58,6 @@ const PublicNavBar: React.FC = () => {
                     {!menuOpen && <Menu size={28} />}
                 </PrimaryButton>
 
-                {/* Desktop Navigation */}
                 <ul className="hidden md:flex gap-6 items-center">
                     {navigationItems.map((item) => (
                         <li key={item.key}>
@@ -78,11 +73,9 @@ const PublicNavBar: React.FC = () => {
                 </ul>
             </div>
 
-            {/* Mobile Sidebar */}
             <div
-                className={`fixed top-0 right-0 w-80 bg-[var(--color-secondary)] rounded-l-2xl text-content shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
-                    menuOpen ? 'translate-x-0' : 'translate-x-full'
-                } md:hidden`}
+                className={`fixed top-0 right-0 w-80 bg-[var(--color-secondary)] rounded-l-2xl text-content shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+                    } md:hidden`}
             >
                 <div className="flex justify-end py-2 px-4">
                     <PrimaryButton onClick={toggleMenu} aria-label="Close sidebar">
@@ -105,7 +98,6 @@ const PublicNavBar: React.FC = () => {
                 </ul>
             </div>
 
-            {/* Overlay for mobile menu */}
             {menuOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"

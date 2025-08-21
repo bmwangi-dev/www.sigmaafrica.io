@@ -9,6 +9,7 @@ interface NavItemProps {
     className?: string;
     active?: boolean;
     disabled?: boolean;
+    onClick?: () => void;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
@@ -17,6 +18,7 @@ const NavItem: React.FC<NavItemProps> = ({
     className = '',
     active = false,
     disabled = false,
+    onClick,
     ...rest
 }) => {
     const { url } = usePage().props;
@@ -42,7 +44,7 @@ const NavItem: React.FC<NavItemProps> = ({
     }
 
     return (
-        <Link href={href} className={defaultClasses} {...rest}>
+        <Link href={href} className={defaultClasses} {...rest} onClick={onClick}>
             {children}
         </Link>
     );
