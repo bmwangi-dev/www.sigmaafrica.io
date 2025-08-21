@@ -1,7 +1,7 @@
 import PublicNavBar from './PublicNavBar';
 import PublicFooter from './PublicFooter';
 import BackToTop from '@/components/ui/BackToTop';
-import NotificationCard from '@/components/ui/NotificationsCard';
+import NotificationCard from '@/pages/Admin/Notifications/Index';
 import { ReactNode } from 'react';
 
 interface UnauthenticatedLayoutProps {

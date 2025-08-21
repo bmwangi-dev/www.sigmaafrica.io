@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
-use Spatie\Enum\Enum;
 use App\Models\Notification;
 use Illuminate\Http\Request;
-use App\Enums\NotificationType;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserNotificationInteraction;
@@ -57,7 +55,6 @@ class NotificationController extends Controller
             'is_active' => 'boolean',
             'start_date' => 'nullable|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
-            'type' => ['required', new Enum(NotificationType::class)],
         ]);
 
         $validated['created_by'] = Auth::id();

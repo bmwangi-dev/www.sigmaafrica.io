@@ -21,7 +21,6 @@ class Notification extends Model
         'is_active',
         'start_date',
         'end_date',
-        'type',
     ];
 
     protected function casts(): array
@@ -30,7 +29,6 @@ class Notification extends Model
             'is_active' => 'boolean',
             'start_date' => 'datetime',
             'end_date' => 'datetime',
-            'type' => NotificationType::class,
         ];
     }
 
@@ -50,13 +48,13 @@ class Notification extends Model
     public function scopeActive($query)
     {
         return $query->where('is_active', true)
-                    ->where(function($q) {
-                        $q->whereNull('start_date')
-                          ->orWhere('start_date', '<=', Carbon::now());
-                    })
-                    ->where(function($q) {
-                        $q->whereNull('end_date')
-                          ->orWhere('end_date', '>=', Carbon::now());
-                    });
+            ->where(function ($q) {
+                $q->whereNull('start_date')
+                    ->orWhere('start_date', '<=', Carbon::now());
+            })
+            ->where(function ($q) {
+                $q->whereNull('end_date')
+                    ->orWhere('end_date', '>=', Carbon::now());
+            });
     }
 }

@@ -19,12 +19,12 @@ class NotificationFactory extends Factory
         return [
             'created_by' => $admin ? $admin->id : User::factory()->admin(),
             'title' => 'SKILL SPARK TRAINING',
-            'description' => $this->faker->paragraph(),
+            'description' => 'Join us for a transformative 3-day training program designed to enhance your skills and knowledge in various fields. This event is perfect for professionals looking to advance their careers and gain new insights.',
             'image_url' => $this->faker->imageUrl(640, 480, 'business', true),
-            'redirect_url' => '/blogs',
+            'redirect_url' => 'https://tinyurl.com/mpvs2pta',
             'is_active' => true,
             'start_date' => null,
-            'end_date' => null,   
+            'end_date' => null,
         ];
     }
 }
