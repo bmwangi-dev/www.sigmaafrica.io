@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { usePage } from '@inertiajs/react';
+import { usePage, Link as InertiaLink, router } from '@inertiajs/react';
 import NavItem from '@/components/ui/NavItem';
 import sigmaLogo from '../../../public/sigma-logo.png';
 import { Menu, X } from 'lucide-react';
 import Link from '@/components/Typography/Link';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
+import { Button } from '@/components/ui/button';
 
 interface NavigationItem {
     label: string;
@@ -58,19 +59,28 @@ const PublicNavBar: React.FC = () => {
                     {!menuOpen && <Menu size={28} />}
                 </PrimaryButton>
 
-                <ul className="hidden md:flex gap-6 items-center">
-                    {navigationItems.map((item) => (
-                        <li key={item.key}>
-                            <NavItem
-                                href={item.href}
-                                active={isActiveRoute(item.href)}
-                                className="transition-colors duration-200"
-                            >
-                                {item.label}
-                            </NavItem>
-                        </li>
-                    ))}
-                </ul>
+                <div className="hidden md:flex gap-6 items-center">
+                    <ul className="flex gap-6 items-center">
+                        {navigationItems.map((item) => (
+                            <li key={item.key}>
+                                <NavItem
+                                    href={item.href}
+                                    active={isActiveRoute(item.href)}
+                                    className="transition-colors duration-200"
+                                >
+                                    {item.label}
+                                </NavItem>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="flex gap-2 ml-4">
+                        <InertiaLink href={route('login')}>
+                            <Button variant="outline" size="sm" className='bg-[var(--color-primary)] text-white cursor-pointer hover:text-[var(--color-migenta)]'>
+                                Sign In
+                            </Button>
+                        </InertiaLink>
+                    </div>
+                </div>
             </div>
 
             <div

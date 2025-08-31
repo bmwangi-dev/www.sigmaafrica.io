@@ -34,26 +34,37 @@ class UserSeeder extends Seeder
         $superUser = User::where('email', $superAdminConfig['email'])->first();
 
         if ($superUser) {
-            $this->command->info('Super admin already exists: ' . $superUser->email);
+            // Update existing super admin to ensure it has the correct role
+            $superUser->update([
+                'role' => 'super_admin',
+                'is_admin' => true,
+                'status' => 'active',
+            ]);
+            $this->command->info('Updated existing super admin: ' . $superUser->email);
             return;
         }
 
-        // Prepare super admin credentials
-        $superUserCred = collect($superAdminConfig)->map(function ($value, $key) {
-            return $key === 'password' ? Hash::make($value) : $value;
-        });
+        // Get first department for super admin
+        $firstDepartment = \App\Models\Department::first();
 
-        // Create the Super Admin
-        $superUser = User::create($superUserCred->toArray());
+        // Create the Super Admin with all required fields
+        $superUser = User::create([
+            'name' => $superAdminConfig['name'],
+            'email' => $superAdminConfig['email'],
+            'password' => Hash::make($superAdminConfig['password']),
+            'role' => 'super_admin',
+            'department_id' => $firstDepartment?->id,
+            'is_admin' => true,
+            'status' => 'active',
+            'email_verified_at' => now(),
+        ]);
 
         // Attach role if roles table exists
         if (Schema::hasTable('roles')) {
-            $role = Role::where('name', RoleEnum::super_admin())->first();
+            $role = Role::where('name', 'super_admin')->first();
             if ($role) {
                 $superUser->assignRole($role);
                 $this->command->info('Assigned super admin role.');
-            } else {
-                $this->command->warn('Super admin role not found in roles table.');
             }
         }
 

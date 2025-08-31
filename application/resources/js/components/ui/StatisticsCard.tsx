@@ -1,43 +1,65 @@
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Heading from "../Typography/Heading";
 import Text from "../Typography/Text";
-const StatisticsCard = () => {
-    const statistics = [
-        {
-            icon: "fas fa-user-graduate",
-            number: "300+",
-            label: "Students"
-        },
-        {
-            icon: "fas fa-chart-pie",
-            number: "8+",
-            label: "Data Science Tools"
-        },
-        {
-            icon: "fas fa-briefcase",
-            number: "80%",
-            label: "Job Absorption"
-        },
-        {
-            icon: "fa-solid fa-chart-line",
-            number: "3+",
-            label: "Business Support"
-        }
-    ];
 
+interface StatItem {
+    title: string;
+    value: string | number;
+    icon?: React.ReactNode;
+}
+
+interface StatisticsCardProps {
+    stats: StatItem[];
+    variant?: "simple" | "detailed";
+    gridCols?: string;
+}
+
+const StatisticsCard: React.FC<StatisticsCardProps> = ({
+    stats,
+    variant = "simple",
+    gridCols = "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+}) => {
     return (
         <section className="py-6 sm:py-10">
             <div className="container mx-auto px-4 w-full">
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
-                    {statistics.map((stat, index) => (
-                        <div
-                            key={index}
-                            className="bg-white hover:bg-[var(--color-migenta)] transition-colors duration-300 shadow-md hover:shadow-lg rounded-lg p-3 sm:p-6 text-center transform hover:scale-105"
-                        >
-                            <i className={`${stat.icon} text-2xl sm:text-4xl text-[var(--color-primary)] mb-2 sm:mb-4`} />
-                            <Heading level={3} size="xl" weight="bold" className="text-gray-800">{stat.number}</Heading>
-                            <Text as="p" size="sm" weight="medium" className="text-[var(--color-sigma-blue)]">{stat.label}</Text>
-                        </div>
-                    ))}
+                <div className={`grid ${gridCols} gap-4 sm:gap-6`}>
+                    {stats.map((stat, idx) => {
+                        if (variant === "detailed") {
+                            return (
+                                <div
+                                    key={idx}
+                                    className="bg-white hover:bg-[var(--color-migenta)] transition-colors duration-300 shadow-md hover:shadow-lg rounded-lg p-4 sm:p-6 text-center transform hover:scale-105"
+                                >
+                                    {stat.icon && <div className="text-3xl mb-3">{stat.icon}</div>}
+                                    <Heading level={3} size="xl" weight="bold" className="text-gray-800">
+                                        {stat.value}
+                                    </Heading>
+                                    <Text as="p" size="sm" weight="medium" className="text-[var(--color-sigma-blue)]">
+                                        {stat.title}
+                                    </Text>
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <Card
+                                key={idx}
+                                className="bg-white shadow-md rounded-xl border border-gray-100 p-4 text-center hover:bg-[var(--color-migenta)] hover:shadow-lg transition-transform transform hover:scale-105"
+                            >
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-sm font-semibold text-[var(--color-sigma-blue)]">
+                                        {stat.title}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="text-3xl font-bold text-[var(--color-primary)]">
+                                        {stat.value}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
                 </div>
             </div>
         </section>

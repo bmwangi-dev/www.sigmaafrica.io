@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Database\Seeders\NotificationSeeder;
+use Database\Seeders\TeamSeeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\RoleSeeder;
 use Illuminate\Database\Seeder;
@@ -16,8 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RoleSeeder::class,
+            DepartmentSeeder::class,
+            CourseSeeder::class,
             UserSeeder::class,
             NotificationSeeder::class,
+            TeamSeeder::class,
         ]);
     }
 }

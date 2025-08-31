@@ -5,7 +5,7 @@ import StatisticsCard from "./StatisticsCard";
 
 interface HeaderProps {
     heading?: string | ReactNode;
-    subheading?: string;
+    subheading?: string | ReactNode;
     description?: string;
     className?: React.CSSProperties;
     containerClass?: string;
@@ -17,7 +17,9 @@ interface HeaderProps {
     textColor?: string;
     showStatistics?: boolean;
     statisticsClassName?: string;
+    style?: React.CSSProperties;
 }
+
 
 export const Header = ({
     heading = '',
@@ -84,7 +86,15 @@ export const Header = ({
 
             {showStatistics && (
                 <div className={statisticsClassName}>
-                    <StatisticsCard />
+                    <StatisticsCard
+                        variant="detailed"
+                        stats={[
+                            { title: "Students", value: "300+", icon: <i className="fas fa-user-graduate text-3xl text-[var(--color-primary)]" /> },
+                            { title: "Data Science Tools", value: "8+", icon: <i className="fas fa-chart-pie text-3xl text-[var(--color-primary)]" /> },
+                            { title: "Job Absorption", value: "80%", icon: <i className="fas fa-briefcase text-3xl text-[var(--color-primary)]" /> },
+                            { title: "Business Support", value: "3+", icon: <i className="fa-solid fa-chart-line text-3xl text-[var(--color-primary)]" /> },
+                        ]}
+                    />
                 </div>
             )}
         </section>

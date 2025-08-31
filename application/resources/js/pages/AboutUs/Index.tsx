@@ -1,28 +1,47 @@
 import { Head } from "@inertiajs/react";
 import { Header } from "@/components/ui/Header";
-import Heading from "@/components/Typography/Heading";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
-export default function Index() {
+import AboutSection from "./Partials/AboutSection";
+import MeetTheTeam from "./Partials/MeetTheTeam";
+import Datascience from "../../../../public/datascience.png";
+import { TeamData } from "@/types/Team";
+
+interface AboutUsProps {
+    teams: TeamData[];
+}
+
+export default function Index({ teams }: AboutUsProps) {
     return (
         <UnauthenticatedLayout>
             <Head title="Home" />
             <Header
                 heading={
                     <>
-                        Sigma <span className="text-[var(--color-migenta)]">Africa</span> Accelerate
+                        About <span className="text-[var(--color-migenta)]">Us</span>
                     </>
                 }
-                subheading="Accelerate Your Future"
+                subheading={
+                    <>Sigma <span className="text-[var(--color-migenta)]">Africa</span> Accelerate</>
+                }
                 description="We transform operations, optimize decisions, and drive sustainable growth through analytics and digital transformation."
-                className={{ background: 'linear-gradient(90deg, #0a2540, #06659b)' }}
+                className={{ background: "linear-gradient(90deg, #0a2540, #06659b)" }}
                 textColor="text-white"
                 showStatistics={false}
-            >
-            </Header>
+            />
+
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center w-full py-8">
-                <Heading level={1} size="3xl" weight="light">Welcome to About US page</Heading>
+                <AboutSection
+                    imageSrc={Datascience}
+                    smallTitle="3 Years of Impact"
+                    bigTitle="Driving Data Science Excellence in Africa"
+                    description="Founded in 2022, Sigma Africa is a leading collective dedicated to shaping Africa’s data-driven future. We build skilled talent, foster innovation, and strengthen the continent’s data ecosystem."
+                    paragraph="We empower industries with data-driven insights and transformative solutions—optimizing decisions, streamlining operations, and fueling sustainable growth through analytics and digital innovation."
+                />
+            </div>
+
+            <div>
+                <MeetTheTeam teams={teams} />
             </div>
         </UnauthenticatedLayout>
-
     );
 }
