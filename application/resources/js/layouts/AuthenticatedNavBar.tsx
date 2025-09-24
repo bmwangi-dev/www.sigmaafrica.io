@@ -40,7 +40,7 @@ const AuthenticatedNavBar: React.FC = () => {
                         <Button
                             variant="outline"
                             size="sm"
-                            className="bg-[var(--color-migenta)] text-white shadow-md hover:bg-white hover:text-[var(--color-primary)]"
+                            className="bg-[var(--color-migenta)] text-black cursor-pointer hover:scale-[1.02] duration-200 transition-all"
                         >
                             Visit Site
                         </Button>
@@ -50,7 +50,7 @@ const AuthenticatedNavBar: React.FC = () => {
                         variant="outline"
                         size="sm"
                         onClick={handleLogout}
-                        className="bg-[var(--color-primary)] text-white shadow-md hover:bg-white hover:text-[var(--color-primary)]"
+                        className="bg-[var(--color-primary)] text-white cursor-pointer hover:scale-[1.02] duration-200 transition-all"
                     >
                         Log Out
                     </Button>

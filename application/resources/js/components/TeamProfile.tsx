@@ -2,7 +2,6 @@ import React from 'react';
 import { SocialIcon } from '@/components/ui/SocialIcons';
 import type { TeamData } from '../types/Team';
 
-
 interface TeamProfileProps {
     member: TeamData;
     className?: string;
@@ -18,7 +17,7 @@ const TeamProfile: React.FC<TeamProfileProps> = ({
 
     return (
         <div
-            className={`team-card fade-in bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 ${className}`}
+            className={`team-card fade-in bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 ${className}`}
             style={{ animationDelay: `${animationDelay}s` }}
         >
             <div className="relative mb-4">
@@ -26,10 +25,6 @@ const TeamProfile: React.FC<TeamProfileProps> = ({
                     src={member.image_path || defaultImage}
                     alt={member.name}
                     className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-gray-200 hover:border-[var(--color-migenta)] transition-colors duration-300"
-                    onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = defaultImage;
-                    }}
                 />
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
                     <span className="bg-[var(--color-migenta)] text-white text-xs px-3 py-1 rounded-full font-semibold">

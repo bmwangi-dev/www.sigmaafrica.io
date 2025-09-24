@@ -21,7 +21,7 @@ class TeamSeeder extends Seeder
                 'email' => 'billbrewood@gmail.com',
                 'department' => 'Leadership',
                 'position' => 'Founder & CEO',
-                'image_path' => '/images/bill.png',
+                'image_path' => '/bill.jpeg',
                 'socials' => [
                     ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/billshikuku/'],
                 ],
@@ -33,7 +33,7 @@ class TeamSeeder extends Seeder
                 'email' => 'toddabbott@gmail.com',
                 'department' => 'Leadership',
                 'position' => 'Growth & Partnerships Lead',
-                'image_path' => '/images/todd.png',
+                'image_path' => '/toddAbott.png',
                 'socials' => [
                     ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/todd-abbott/'],
                 ],
@@ -45,7 +45,7 @@ class TeamSeeder extends Seeder
                 'email' => 'nevilleapondi@gmail.com',
                 'department' => 'Marketing',
                 'position' => 'Marketing',
-                'image_path' => '/images/neville.png',
+                'image_path' => '/neville.png',
                 'socials' => [
                     ['type' => 'linkedin', 'url' => 'https://linkedin.com/in/fraiser'],
                 ],
@@ -57,7 +57,7 @@ class TeamSeeder extends Seeder
                 'email' => 'mwangibrian.dev@gmail.com',
                 'department' => 'Engineering',
                 'position' => 'CTO & Lead Developer',
-                'image_path' => '/images/mwangi.png',
+                'image_path' => '/mwangi.jpeg',
                 'socials' => [
                     ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/mwangi-brian-68732527b/'],
                 ],

@@ -130,11 +130,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/appearance', function () {
             return Inertia::render('Settings/Appearance');
         })->name('appearance');
-        
+
         Route::get('/profile', function () {
             return Inertia::render('Settings/Profile');
         })->name('profile');
-        
+
         Route::get('/password', function () {
             return Inertia::render('Settings/Password');
         })->name('password');

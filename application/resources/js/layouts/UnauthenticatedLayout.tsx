@@ -15,7 +15,7 @@ export default function UnauthenticatedLayout({ children }: UnauthenticatedLayou
             <main className="flex-1">
                 {children}
                 <BackToTop />
-                <NotificationCard />
+                {/* <NotificationCard /> */}
             </main>
             <PublicFooter />
         </div>

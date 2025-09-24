@@ -3,7 +3,10 @@ import { Header } from "@/components/ui/Header";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
 import AboutSection from "./Partials/AboutSection";
 import MeetTheTeam from "./Partials/MeetTheTeam";
+import HowWeEmpower from "./Partials/HowWeEmpower";
+import OurPartners from "./Partials/OurPartner";
 import Datascience from "../../../../public/datascience.png";
+import howweempower from "../../../../public/howweempower.jpeg";
 import { TeamData } from "@/types/Team";
 
 interface AboutUsProps {
@@ -13,7 +16,7 @@ interface AboutUsProps {
 export default function Index({ teams }: AboutUsProps) {
     return (
         <UnauthenticatedLayout>
-            <Head title="Home" />
+            <Head title="About Us" />
             <Header
                 heading={
                     <>
@@ -29,7 +32,7 @@ export default function Index({ teams }: AboutUsProps) {
                 showStatistics={false}
             />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center w-full py-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-start w-full py-8">
                 <AboutSection
                     imageSrc={Datascience}
                     smallTitle="3 Years of Impact"
@@ -41,6 +44,17 @@ export default function Index({ teams }: AboutUsProps) {
 
             <div>
                 <MeetTheTeam teams={teams} />
+            </div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-start w-full py-8">
+                <HowWeEmpower
+                    imageSrc={howweempower}
+                    bigTitle="How We Empower Data-Driven Growth"
+                />
+            </div>
+
+            <div>
+                <OurPartners />
             </div>
         </UnauthenticatedLayout>
     );

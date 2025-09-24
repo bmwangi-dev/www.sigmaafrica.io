@@ -47,8 +47,7 @@ export const Header = ({
             style={defaultStyles}
         >
             <div
-                className={`${containerClass} ${showStatistics ? "" : "pb-8"
-                    }`}
+                className={`${containerClass} ${showStatistics ? "" : "pb-8"}`}
             >
                 <Heading
                     level={1}

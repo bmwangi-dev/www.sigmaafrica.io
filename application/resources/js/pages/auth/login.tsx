@@ -42,7 +42,6 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
                 description="Sign in to continue your journey with Sigma Africa"
             >
                 <form onSubmit={submit} className="space-y-6">
-                    {/* Email */}
                     <div className="space-y-2">
                         <Label htmlFor="email" className="text-[var(--color-sigma-blue)] font-medium">
                             Email Address
@@ -120,7 +119,6 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
                         )}
                     </div>
 
-                    {/* Button */}
                     <Button
                         type="submit"
                         className="w-full bg-[var(--color-primary)] text-white font-semibold py-2 rounded-lg shadow-md cursor-pointer"
@@ -129,12 +127,14 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
                         {processing ? 'Signing in...' : 'Sign in'}
                     </Button>
 
-                    {/* Footer text */}
                     <div className="text-center text-sm text-gray-600">
-                        Don’t have an account?{' '}
-                        <span className="text-[var(--color-migenta)] font-medium cursor-pointer">
+                        Need an account?{' '}
+                        <span className="text-[var(--color-migenta)] font-medium">
                             Contact your administrator
                         </span>
+                        <div className="mt-1 text-xs text-gray-500">
+                            Accounts are created and managed by administrators
+                        </div>
                     </div>
                 </form>
             </AuthCardLayout>

@@ -41,7 +41,6 @@ export default function Dashboard() {
                         </div>
                     </div>
 
-                    {/* User Info Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         <Card>
                             <CardHeader>
@@ -114,7 +113,7 @@ export default function Dashboard() {
                         </CardHeader>
                         <CardContent>
                             <p className="text-gray-600">
-                                You have successfully registered and logged into your account.
+                                You have successfully logged into your account.
                                 From here you can manage your profile, view your courses, and access
                                 all the learning resources available to you.
                             </p>

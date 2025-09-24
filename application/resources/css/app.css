@@ -5,32 +5,34 @@
 
 
 @layer base {
-  :root {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    :root {
+        --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 
-    /* Your Custom Colors */
-    --color-primary: #06659b;
-    --color-sigma-blue: #0a2540;
-    --color-secondary: #ffffff;
-    --color-transparent: #0000;
-    --color-migenta:#fea300;
-    --color-header-gradient: linear-gradient(90deg, #0a2540, #06659b);
+        /* Your Custom Colors */
+        --color-primary: #06659b;
+        --color-sigma-blue: #0a2540;
+        --color-primary-note: #1078b4;
+        --color-secondary: #ffffff;
+        --color-transparent: #0000;
+        --color-migenta: #fea300;
+        --color-sigma-orange: #e7b048;
+        --color-header-gradient: linear-gradient(90deg, #0a2540, #06659b);
 
-    --color-content: #1a1a1a;
-    --color-background: #ffffff;
-    --color-border: #e0e0e0;
-    --color-accent: var(--color-primary);
-    --color-text-on-primary: var(--color-secondary);
-    --color-text-on-secondary: #1a1a1a;
-  }
+        --color-content: #1a1a1a;
+        --color-background: #ffffff;
+        --color-border: #e0e0e0;
+        --color-accent: var(--color-primary);
+        --color-text-on-primary: var(--color-secondary);
+        --color-text-on-secondary: #1a1a1a;
+    }
 
-  * {
-    @apply border-[var(--color-border)];
-  }
+    * {
+        @apply border-[var(--color-border)];
+    }
 
-  body {
-    @apply font-sans;
-    background-color: #f7f5f5;
-    color: var(--color-content);
-  }
+    body {
+        @apply font-sans;
+        background-color: #f7f5f5;
+        color: var(--color-content);
+    }
 }

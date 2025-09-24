@@ -31,7 +31,7 @@ class UserManagementController extends Controller
         // Apply search
         $searchableFields = [
             'name',
-            'email', 
+            'email',
             'student_number',
             'phone_number',
             'department.name'
@@ -69,6 +69,13 @@ class UserManagementController extends Controller
             'departments' => DepartmentData::collect($departments),
             'roles' => $roles,
             'filters' => $request->only(['search', 'role', 'department_id', 'status', 'sort', 'direction']),
+            'stats' => [
+                'total_users' => User::count(),
+                'total_active_users' => User::where('status', 'active')->count(),
+                'total_students' => User::where('role', 'student')->count(),
+                'total_mentors' => User::where('role', 'mentor')->count(),
+                'total_cohorts' => \App\Models\Cohort::count(),
+            ],
         ]);
     }
 
