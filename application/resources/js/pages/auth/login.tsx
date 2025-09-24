@@ -29,7 +29,7 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
-        post(route('login'), {
+        post('/login', {
             onFinish: () => reset('password'),
         });
     };
@@ -111,7 +111,7 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
 
                         {canResetPassword && (
                             <Link
-                                href={route('password.request')}
+                                href="/forgot-password"
                                 className="text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-migenta)] transition-colors"
                             >
                                 Forgot password?
