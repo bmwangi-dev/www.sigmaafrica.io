@@ -17,4 +17,21 @@ require __DIR__ . '/../vendor/autoload.php';
 /** @var Application $app */
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
+// Create storage directories if they don't exist
+$storagePaths = [
+    '/tmp/framework/cache',
+    '/tmp/framework/sessions',
+    '/tmp/framework/views',
+    '/tmp/logs',
+];
+
+foreach ($storagePaths as $path) {
+    if (!is_dir($path)) {
+        mkdir($path, 0755, true);
+    }
+}
+
+// Set storage path to /tmp for serverless
+$app->useStoragePath('/tmp');
+
 $app->handleRequest(Request::capture());
