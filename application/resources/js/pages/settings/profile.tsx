@@ -2,7 +2,7 @@ import { Transition } from '@headlessui/react';
 import { Head, Link, useForm, usePage } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout';
-import { Heading } from '@/components/Typography/Heading';
+import Heading from '@/components/Typography/Heading';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 
 type ProfileForm = {
@@ -34,7 +34,7 @@ export default function Profile({ mustVerifyEmail = false, status }: { mustVerif
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                     <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                         <div className="max-w-xl">
-                            <Heading level="h2" className="mb-4">Profile Information</Heading>
+                            <Heading level={2} className="mb-4">Profile Information</Heading>
                             <p className="mt-1 text-sm text-gray-600">
                                 Update your account's profile information and email address.
                             </p>

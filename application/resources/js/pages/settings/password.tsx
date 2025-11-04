@@ -2,7 +2,7 @@ import { Head, useForm } from '@inertiajs/react';
 import { FormEventHandler, useRef } from 'react';
 import { Transition } from '@headlessui/react';
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout';
-import { Heading } from '@/components/Typography/Heading';
+import Heading from '@/components/Typography/Heading';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 
 export default function Password() {
@@ -43,7 +43,7 @@ export default function Password() {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                     <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                         <div className="max-w-xl">
-                            <Heading level="h2" className="mb-4">Update Password</Heading>
+                            <Heading level={2} className="mb-4">Update Password</Heading>
                             <p className="mt-1 text-sm text-gray-600">
                                 Ensure your account is using a long, random password to stay secure.
                             </p>
