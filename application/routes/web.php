@@ -17,6 +17,10 @@ Route::get('/about', function () {
     ]);
 })->name('about');
 
+Route::get('/academy', function () {
+    return Inertia::render('Academy/Index');
+})->name('academy');
+
 Route::get('/notifications/active', [NotificationController::class, 'getActiveNotifications'])
     ->name('notifications.active');
 

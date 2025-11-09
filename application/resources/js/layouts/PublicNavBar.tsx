@@ -20,7 +20,7 @@ const PublicNavBar: React.FC = () => {
     const navigationItems: NavigationItem[] = [
         { label: 'Home', href: '/', key: 'home' },
         { label: 'About Us', href: '/about', key: 'about' },
-        { label: 'Services', href: '/services', key: 'services' },
+        { label: 'Academy', href: '/academy', key: 'Academy' },
         { label: 'Community', href: '/community', key: 'community' },
         { label: 'Contact', href: '/contact', key: 'contact' },
         { label: 'Blogs', href: '/blogs', key: 'blogs' },

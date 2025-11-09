@@ -3,6 +3,7 @@ import { Header } from "@/components/ui/Header";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
 import AboutSection from "./Partials/AboutSection";
 import MeetTheTeam from "./Partials/MeetTheTeam";
+import FutureSection from "./Partials/FutureSection";
 import HowWeEmpower from "./Partials/HowWeEmpower";
 import OurPartners from "./Partials/OurPartner";
 import Datascience from "../../../../public/datascience.png";
@@ -55,6 +56,9 @@ export default function Index({ teams }: AboutUsProps) {
 
             <div>
                 <OurPartners />
+            </div>
+            <div>
+                <FutureSection />
             </div>
         </UnauthenticatedLayout>
     );
