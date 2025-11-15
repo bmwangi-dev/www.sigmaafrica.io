@@ -21,6 +21,18 @@ Route::get('/academy', function () {
     return Inertia::render('Academy/Index');
 })->name('academy');
 
+Route::get('/community', function () {
+    return Inertia::render('Community/Index');
+})->name('community');
+
+Route::get('/blogs', function () {
+    return Inertia::render('Blogs/Index');
+})->name('blogs');
+
+Route::get('/contact', function () {
+    return Inertia::render('ContactUs/Index');
+})->name('contact');
+
 Route::get('/notifications/active', [NotificationController::class, 'getActiveNotifications'])
     ->name('notifications.active');
 

@@ -1,23 +1,47 @@
+# Development directories
 /node_modules
 /.github
 /.idea
 /.vscode
 /tests
-/storage/*/!
-/storage/framework/cache/!
-/storage/framework/views/!
-/storage/framework/sessions/!
-/storage/logs/!
+
+# Storage directories (will use /tmp in production)
+/storage/app/*
+!/storage/app/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/testing/*
+!/storage/framework/testing/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Environment files
 .env
-.env.example
+.env.*
+!.env.example
+
+# Git files
 .git
 .gitattributes
 .gitignore
+
+# Development tools
 .phpunit.result.cache
 .styleci.yml
 .php_cs
+.php-cs-fixer.cache
 _ide_helper.php
 composer.phar
 docker-compose.yml
 phpunit.xml
 webpack.mix.js
+*.log
+
+# Markdown documentation (optional)
+README.md
+*.md
+!README.md

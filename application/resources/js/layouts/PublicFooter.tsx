@@ -55,10 +55,11 @@ export default function PublicFooter() {
                         <Heading level={3} size="xl" weight="bold" className="font-bold text-base mb-2">Useful Links</Heading>
                         <ul className="space-y-1">
                             <li><a href="/" className="hover:underline">Home</a></li>
-                            <li><a href="/about.html" className="hover:underline">About Us</a></li>
-                            <li><a href="/community.html" className="hover:underline">Community</a></li>
-                            <li><a href="/blogs.html" className="hover:underline">Blogs</a></li>
-                            <li><a href="/contact.html" className="hover:underline">Contact Us</a></li>
+                            <li><a href="/about" className="hover:underline">About Us</a></li>
+                            <li><a href="/academy" className="hover:underline">Academy</a></li>
+                            <li><a href="/community" className="hover:underline">Community</a></li>
+                            <li><a href="/blogs" className="hover:underline">Blogs</a></li>
+                            <li><a href="/contact" className="hover:underline">Contact Us</a></li>
                         </ul>
                     </div>
 
