@@ -9,7 +9,7 @@
         "format:check": "prettier --check resources/",
         "lint": "eslint . --fix",
         "types": "tsc --noEmit",
-        "vercel-build": "npm run build && composer install --optimize-autoloader --no-dev && php artisan config:cache && php artisan route:cache && php artisan view:cache"
+        "vercel-build": "composer install --optimize-autoloader --no-dev && npm run build"
     },
     "devDependencies": {
         "@eslint/js": "^9.19.0",
