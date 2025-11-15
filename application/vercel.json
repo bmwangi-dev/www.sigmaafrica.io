@@ -1,13 +1,17 @@
 {
     "version": 2,
+    "framework": null,
     "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "public"
+            }
+        },
         {
             "src": "api/**/*.php",
             "use": "vercel-php@0.7.4"
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
         }
     ],
     "routes": [
@@ -20,7 +24,7 @@
             "dest": "/public/build/$1"
         },
         {
-            "src": "/(.*\\.(css|js|json|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
+            "src": "/(.*\\.(css|js|json|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|mp4|webm))",
             "dest": "/public/$1"
         },
         {
