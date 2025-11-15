@@ -1,11 +1,8 @@
 {
     "version": 2,
-    "framework": null,
-    "buildCommand": "npm run build && composer install --optimize-autoloader --no-dev",
-    "installCommand": "npm install",
     "builds": [
         {
-            "src": "api/lambda.php",
+            "src": "api/**/*.php",
             "use": "vercel-php@0.7.4"
         },
         {
@@ -19,13 +16,6 @@
             "dest": "/api/debug.php"
         },
         {
-            "src": "/(css|js|fonts|images|build)(.*)",
-            "headers": {
-                "Cache-Control": "public, max-age=31536000, immutable"
-            },
-            "continue": true
-        },
-        {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
         },
@@ -37,18 +27,5 @@
             "src": "/(.*)",
             "dest": "/api/lambda.php"
         }
-    ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp/views",
-        "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
-    }
+    ]
 }
