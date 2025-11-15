@@ -10,11 +10,28 @@ if (!getenv('LOG_CHANNEL')) {
     putenv('LOG_CHANNEL=stderr');
 }
 if (!getenv('DB_CONNECTION')) {
-    putenv('DB_CONNECTION=pgsql');
-    putenv('DB_DATABASE=/tmp/database.pgsql');
+    putenv('DB_CONNECTION=sqlite');
+    putenv('DB_DATABASE=/tmp/database.sqlite');
 }
 if (!getenv('APP_DEBUG')) {
     putenv('APP_DEBUG=false');
+}
+
+// Set bootstrap cache paths to /tmp for serverless
+if (!getenv('APP_SERVICES_CACHE')) {
+    putenv('APP_SERVICES_CACHE=/tmp/bootstrap/cache/services.php');
+}
+if (!getenv('APP_PACKAGES_CACHE')) {
+    putenv('APP_PACKAGES_CACHE=/tmp/bootstrap/cache/packages.php');
+}
+if (!getenv('APP_CONFIG_CACHE')) {
+    putenv('APP_CONFIG_CACHE=/tmp/bootstrap/cache/config.php');
+}
+if (!getenv('APP_ROUTES_CACHE')) {
+    putenv('APP_ROUTES_CACHE=/tmp/bootstrap/cache/routes.php');
+}
+if (!getenv('APP_EVENTS_CACHE')) {
+    putenv('APP_EVENTS_CACHE=/tmp/bootstrap/cache/events.php');
 }
 
 // Determine if the application is in maintenance mode...
@@ -36,6 +53,7 @@ try {
         '/tmp/framework/sessions',
         '/tmp/framework/views',
         '/tmp/logs',
+        '/tmp/bootstrap/cache',
     ];
 
     foreach ($storagePaths as $path) {
