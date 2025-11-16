@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+// Force HTTPS detection for Vercel
+$_SERVER['HTTPS'] = 'on';
+$_SERVER['SERVER_PORT'] = 443;
+
 // Set default environment variables if not set
 if (!getenv('LOG_CHANNEL')) {
     putenv('LOG_CHANNEL=stderr');
