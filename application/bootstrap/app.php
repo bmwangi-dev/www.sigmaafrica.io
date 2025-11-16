@@ -7,6 +7,12 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+
+// Force HTTPS in production
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
