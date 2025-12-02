@@ -73,18 +73,25 @@ try {
     $response = $app->handleRequest(Request::capture());
     $response->send();
 } catch (Throwable $e) {
-    // If we're in debug mode, show the error
-    if (getenv('APP_DEBUG') === 'true') {
-        echo '<h1>Error</h1>';
-        echo '<p>' . $e->getMessage() . '</p>';
-        echo '<pre>' . $e->getTraceAsString() . '</pre>';
-    } else {
-        // Log the error to stderr
-        error_log('Laravel Error: ' . $e->getMessage());
-        error_log($e->getTraceAsString());
+    // Always log the error to stderr for Vercel logs
+    error_log('Laravel Error: ' . $e->getMessage());
+    error_log('File: ' . $e->getFile() . ':' . $e->getLine());
+    error_log($e->getTraceAsString());
 
+    // If we're in debug mode, show the error
+    if (getenv('APP_DEBUG') === 'true' || getenv('APP_ENV') !== 'production') {
+        http_response_code(500);
+        header('Content-Type: application/json');
+        echo json_encode([
+            'error' => 'Server Error',
+            'message' => $e->getMessage(),
+            'file' => $e->getFile(),
+            'line' => $e->getLine(),
+            'trace' => explode("\n", $e->getTraceAsString())
+        ], JSON_PRETTY_PRINT);
+    } else {
         // Return a clean 500 error
         http_response_code(500);
-        echo 'Server Error - Check logs for details';
+        echo 'Server Error - Check Vercel logs for details';
     }
 }

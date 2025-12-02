@@ -21,7 +21,8 @@
 
 # Environment files
 .env
-.env.*
+.env.local
+.env.development
 !.env.example
 
 # Git files
@@ -41,7 +42,10 @@ phpunit.xml
 webpack.mix.js
 *.log
 
-# Markdown documentation (optional)
-README.md
-*.md
-!README.md
+# Markdown documentation (optional - remove if you want to include them)
+# README.md
+# *.md
+
+# DO NOT IGNORE - These are needed for deployment
+#!/public/build
+#!/vendor
