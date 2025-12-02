@@ -70,28 +70,44 @@ try {
     $app->useStoragePath('/tmp');
 
     // Handle the request
-    $response = $app->handleRequest(Request::capture());
+    $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+    $response = $kernel->handle(
+        $request = Illuminate\Http\Request::capture()
+    );
+
     $response->send();
+
+    $kernel->terminate($request, $response);
 } catch (Throwable $e) {
-    // Always log the error to stderr for Vercel logs
-    error_log('Laravel Error: ' . $e->getMessage());
-    error_log('File: ' . $e->getFile() . ':' . $e->getLine());
+    // Log to stderr for Vercel logs (this doesn't output to browser)
+    error_log('Laravel Fatal Error: ' . $e->getMessage());
+    error_log('File: ' . $e->getFile() . ' Line: ' . $e->getLine());
     error_log($e->getTraceAsString());
 
-    // If we're in debug mode, show the error
-    if (getenv('APP_DEBUG') === 'true' || getenv('APP_ENV') !== 'production') {
-        http_response_code(500);
-        header('Content-Type: application/json');
-        echo json_encode([
-            'error' => 'Server Error',
-            'message' => $e->getMessage(),
-            'file' => $e->getFile(),
-            'line' => $e->getLine(),
-            'trace' => explode("\n", $e->getTraceAsString())
-        ], JSON_PRETTY_PRINT);
+    // Only show detailed errors in non-production
+    if (getenv('APP_ENV') !== 'production' || getenv('APP_DEBUG') === 'true') {
+        // Use output buffering to prevent headers already sent
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: text/html; charset=utf-8');
+        }
+        
+        echo '<html><head><title>Server Error</title></head><body>';
+        echo '<h1>Server Error</h1>';
+        echo '<p><strong>Message:</strong> ' . htmlspecialchars($e->getMessage()) . '</p>';
+        echo '<p><strong>File:</strong> ' . htmlspecialchars($e->getFile()) . ':' . $e->getLine() . '</p>';
+        echo '<details><summary>Stack Trace</summary><pre>' . htmlspecialchars($e->getTraceAsString()) . '</pre></details>';
+        echo '<p><em>To disable this, set APP_DEBUG=false in Vercel environment variables</em></p>';
+        echo '</body></html>';
     } else {
-        // Return a clean 500 error
-        http_response_code(500);
-        echo 'Server Error - Check Vercel logs for details';
+        // Production: Show minimal error
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: text/html; charset=utf-8');
+        }
+        echo '<html><head><title>Server Error</title></head><body>';
+        echo '<h1>500 - Server Error</h1>';
+        echo '<p>An error occurred. Please try again later.</p>';
+        echo '</body></html>';
     }
 }
