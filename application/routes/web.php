@@ -10,6 +10,38 @@ Route::get('/', function () {
     return Inertia::render('Home/Index');
 })->name('home');
 
+// TEMPORARY: Database setup route - REMOVE AFTER USE!
+Route::get('/setup-database', function () {
+    $secret = request()->query('secret');
+    if ($secret !== env('SETUP_SECRET', 'change-me-12345')) {
+        abort(403, 'Unauthorized');
+    }
+
+    try {
+        $results = [];
+        
+        // Run migrations
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        $results['migrations'] = 'Completed';
+        
+        // Run seeders
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+        $results['seeders'] = 'Completed';
+        
+        return response()->json([
+            'success' => true,
+            'message' => 'Database setup completed!',
+            'results' => $results,
+            'warning' => 'REMOVE this route after use!'
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => $e->getMessage()
+        ], 500);
+    }
+});
+
 Route::get('/about', function () {
     $teams = Team::active()->ordered()->get();
     return Inertia::render('AboutUs/Index', [
