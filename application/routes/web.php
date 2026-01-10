@@ -43,12 +43,72 @@ Route::get('/setup-database', function () {
 });
 
 Route::get('/about', function () {
-    try {
-        $teams = Team::active()->ordered()->get();
-    } catch (\Exception $e) {
-        \Log::warning('Teams could not be loaded: ' . $e->getMessage());
-        $teams = [];
-    }
+    $teams = [
+        [
+            'id' => 1,
+            'name' => 'Makaka Bill',
+            'contact_no' => '+233-123-456-789',
+            'email' => 'billbrewood@gmail.com',
+            'department' => 'Leadership',
+            'position' => 'Founder & CEO',
+            'image_path' => '/bill.jpeg',
+            'socials' => [
+                ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/billshikuku/'],
+            ],
+            'is_active' => true,
+            'sort_order' => 1,
+            'created_at' => now()->toISOString(),
+            'updated_at' => now()->toISOString(),
+        ],
+        [
+            'id' => 2,
+            'name' => 'Todd Abbott',
+            'contact_no' => '+254-700-123-456',
+            'email' => 'toddabbott@gmail.com',
+            'department' => 'Leadership',
+            'position' => 'Growth & Partnerships Lead',
+            'image_path' => '/toddAbott.png',
+            'socials' => [
+                ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/todd-abbott/'],
+            ],
+            'is_active' => true,
+            'sort_order' => 2,
+            'created_at' => now()->toISOString(),
+            'updated_at' => now()->toISOString(),
+        ],
+        [
+            'id' => 3,
+            'name' => 'Neville Apondi',
+            'contact_no' => '+254-722-987-654',
+            'email' => 'nevilleapondi@gmail.com',
+            'department' => 'Marketing',
+            'position' => 'Marketing',
+            'image_path' => '/neville.png',
+            'socials' => [
+                ['type' => 'linkedin', 'url' => 'https://linkedin.com/in/fraiser'],
+            ],
+            'is_active' => true,
+            'sort_order' => 3,
+            'created_at' => now()->toISOString(),
+            'updated_at' => now()->toISOString(),
+        ],
+        [
+            'id' => 4,
+            'name' => 'Mwangi Brian',
+            'contact_no' => '+254-791-948-842',
+            'email' => 'mwangibrian.dev@gmail.com',
+            'department' => 'Engineering',
+            'position' => 'CTO & Lead Developer',
+            'image_path' => '/mwangi.jpeg',
+            'socials' => [
+                ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/mwangi-brian-68732527b/'],
+            ],
+            'is_active' => true,
+            'sort_order' => 4,
+            'created_at' => now()->toISOString(),
+            'updated_at' => now()->toISOString(),
+        ],
+    ];
     
     return Inertia::render('AboutUs/Index', [
         'teams' => $teams
