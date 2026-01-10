@@ -43,7 +43,13 @@ Route::get('/setup-database', function () {
 });
 
 Route::get('/about', function () {
-    $teams = Team::active()->ordered()->get();
+    try {
+        $teams = Team::active()->ordered()->get();
+    } catch (\Exception $e) {
+        \Log::warning('Teams could not be loaded: ' . $e->getMessage());
+        $teams = [];
+    }
+    
     return Inertia::render('AboutUs/Index', [
         'teams' => $teams
     ]);
