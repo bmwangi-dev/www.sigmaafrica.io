@@ -73,13 +73,13 @@ const PublicNavBar: React.FC = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="flex gap-2 ml-4">
+                    {/* <div className="flex gap-2 ml-4">
                         <InertiaLink href={route('login')}>
                             <Button variant="outline" size="sm" className='bg-[var(--color-primary)] text-white cursor-pointer hover:text-[var(--color-migenta)]'>
                                 Sign In
                             </Button>
                         </InertiaLink>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

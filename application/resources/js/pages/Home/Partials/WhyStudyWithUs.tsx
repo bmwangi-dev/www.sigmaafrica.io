@@ -34,7 +34,7 @@ const WhyStudyWithUs = () => {
         <section className="px-4 sm:pt-4 mt-4">
             <div className="container mx-auto flex flex-col lg:flex-row gap-8 gap-y-8 items-start">
                 <div className="bg-white rounded-xl shadow-md p-8 flex-1">
-                    <Heading level={2} size="3xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-6">WHY STUDY WITH US?</Heading>
+                    <Heading level={2} size="3xl" weight="bold" className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg text-center max-w-2xl mx-auto mb-6">WHY STUDY WITH US?</Heading>
                     <div className="space-y-6">
                         {benefits.map((benefit, idx) => (
                             <div key={idx} className="flex items-start gap-4">

@@ -11,9 +11,8 @@ const OurPartners: React.FC = () => {
         <section className="py-12">
             <div className="max-w-6xl mx-auto text-center px-6">
                 {/* Heading */}
-                <h2 className="text-3xl font-bold mb-4">
-                    <span className="text-[#06659b]">Our</span>{" "}
-                    <span className="text-[#fea300]">Partners</span>
+                <h2 className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto text-3xl font-bold">
+                    Our Partners
                 </h2>
                 <p className="text-lg text-gray-600 mb-10">
                     Collaborating for a brighter future.

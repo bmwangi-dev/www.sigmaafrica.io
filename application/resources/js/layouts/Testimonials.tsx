@@ -61,9 +61,9 @@ const Testimonials: React.FC = () => {
                     level={2}
                     size="4xl"
                     weight="bold"
-                    className="text-center mb-10 text-[var(--color-sigma-blue)]"
+                    className="text-center mb-10 bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg text-center max-w-2xl mx-auto"
                 >
-                    What <span className="text-[var(--color-migenta)]">They</span> Say
+                    What They Say
                 </Heading>
 
                 <div className="grid md:grid-cols-2 gap-8 items-center">

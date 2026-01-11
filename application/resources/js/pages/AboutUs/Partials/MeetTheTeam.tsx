@@ -11,7 +11,7 @@ const MeetTheTeam: React.FC<MeetTheTeamProps> = ({ teams = [] }) => (
     <section className="meet-team py-16 px-6 text-center">
         <div className="max-w-7xl mx-auto">
             <h6 className="text-sm text-[var(--color-migenta)] uppercase mb-2 tracking-wide">The Professionals</h6>
-            <h2 className="text-4xl font-bold mb-4 text-[var(--color-content)]">Meet The Team</h2>
+            <h2 className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto text-4xl font-bold">Meet The Team</h2>
             <p className="text-gray-600 max-w-3xl mx-auto mb-12 text-lg leading-relaxed">
                 Our team at Sigma Africa is composed of passionate data scientists, engineers, and industry experts
                 dedicated to driving Africa's digital transformation through innovative analytics and data-driven solutions.

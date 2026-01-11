@@ -94,7 +94,7 @@ const ContactSection = () => {
                                         type="text"
                                         id="name"
                                         placeholder="Name"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none focus:ring-2 focus:ring-[var(--color-migenta)] outline-none"
+                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         value={data.name}
                                         onChange={e => setData('name', e.target.value)}
                                     />
@@ -107,7 +107,7 @@ const ContactSection = () => {
                                         type="email"
                                         id="email"
                                         placeholder="Email"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none focus:ring-2 focus:ring-[var(--color-migenta)] outline-none"
+                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         value={data.email}
                                         onChange={e => setData('email', e.target.value)}
                                     />
@@ -122,7 +122,7 @@ const ContactSection = () => {
                                         type="tel"
                                         id="phone"
                                         placeholder="Your Number"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none focus:ring-2 focus:ring-[var(--color-migenta)] outline-none"
+                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         value={data.phone}
                                         onChange={e => setData('phone', e.target.value)}
                                     />
@@ -135,7 +135,7 @@ const ContactSection = () => {
                                         type="text"
                                         id="subject"
                                         placeholder="Your Subject"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none focus:ring-2 focus:ring-[var(--color-migenta)] outline-none"
+                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         value={data.subject}
                                         onChange={e => setData('subject', e.target.value)}
                                     />
@@ -149,7 +149,7 @@ const ContactSection = () => {
                                     id="message"
                                     rows={6}
                                     placeholder="Message"
-                                    className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none focus:ring-2 focus:ring-[var(--color-migenta)] outline-none resize-none"
+                                    className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none resize-none"
                                     value={data.message}
                                     onChange={e => setData('message', e.target.value)}
                                 ></textarea>

@@ -57,7 +57,7 @@ export default function Index({ teams }: AboutUsProps) {
             <div>
                 <OurPartners />
             </div>
-            <div>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
                 <FutureSection />
             </div>
         </UnauthenticatedLayout>

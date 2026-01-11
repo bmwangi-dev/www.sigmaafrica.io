@@ -45,7 +45,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 
                 <div>
                     <Text as="p" size="xl" weight="semibold" className="text-[var(--color-migenta)] mb-2">{smallTitle}</Text>
-                    <Heading level={1} size="3xl" weight="bold" className="md:text-4xl leading-tight mb-4">{bigTitle}</Heading>
+                    <Heading level={2} size="3xl" weight="bold" className="bg-[var(--color-migenta)] text-white py-3 px-6 rounded-lg mb-8 text-left inline-block shadow-lg md:text-4xl leading-tight">{bigTitle}</Heading>
                     <Text as="p" size="base" weight="normal" className="text-content mb-4">{description}</Text>
                     <Text as="p" size="base" weight="normal" className="text-content">{paragraph}</Text>
                 </div>

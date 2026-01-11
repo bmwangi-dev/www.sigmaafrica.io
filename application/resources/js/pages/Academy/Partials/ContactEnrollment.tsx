@@ -112,7 +112,7 @@ const ContactEnrollment: React.FC<ContactEnrollmentProps> = ({ imageSrc }) => {
                                         onChange={(e) =>
                                             setFormData({ ...formData, name: e.target.value })
                                         }
-                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--color-migenta)]"
+                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         required
                                     />
                                 </div>
@@ -130,7 +130,7 @@ const ContactEnrollment: React.FC<ContactEnrollmentProps> = ({ imageSrc }) => {
                                         onChange={(e) =>
                                             setFormData({ ...formData, email: e.target.value })
                                         }
-                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--color-migenta)]"
+                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         required
                                     />
                                 </div>
@@ -149,7 +149,7 @@ const ContactEnrollment: React.FC<ContactEnrollmentProps> = ({ imageSrc }) => {
                                         setFormData({ ...formData, message: e.target.value })
                                     }
                                     rows={5}
-                                    className="w-full px-4 py-3 rounded-md bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--color-migenta)] resize-none"
+                                    className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none resize-none"
                                     required
                                 />
                             </div>

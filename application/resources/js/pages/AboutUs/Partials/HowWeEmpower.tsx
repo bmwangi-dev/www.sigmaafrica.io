@@ -19,7 +19,7 @@ const HowWeEmpower: React.FC<HowWeEmpowerProps> = ({
                         level={2}
                         size="3xl"
                         weight="bold"
-                        className="md:text-4xl leading-tight mb-4"
+                        className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto md:text-4xl leading-tight"
                     >
                         {bigTitle}
                     </Heading>
