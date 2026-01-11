@@ -3,6 +3,8 @@ import { Header } from "@/components/ui/Header";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
 
 
+import ContactSection from "./Partials/ContactSection";
+
 function Index() {
     return (
         <UnauthenticatedLayout>
@@ -17,6 +19,8 @@ function Index() {
                 textColor="text-white"
                 showStatistics={false}
             />
+
+            <ContactSection />
         </UnauthenticatedLayout>
     )
 }

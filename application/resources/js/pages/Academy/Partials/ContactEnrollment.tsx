@@ -44,7 +44,7 @@ const ContactEnrollment: React.FC<ContactEnrollmentProps> = ({ imageSrc }) => {
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="relative">
-                        <div className="absolute -top-8 -left-8 bg-white rounded-full w-24 h-24 flex items-center justify-center shadow-lg z-10">
+                        <div className="absolute -top-8 -left-8 bg-[var(--color-primary-note)] rounded-full w-24 h-24 flex items-center justify-center shadow-lg z-10">
                             <div className="text-center">
                                 <Text as="p" size="2xl" weight="bold" className="text-[var(--color-migenta)]">
                                     A+
