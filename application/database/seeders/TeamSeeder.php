@@ -16,7 +16,7 @@ class TeamSeeder extends Seeder
         // Create specific team members based on the legacy data
         $teamMembers = [
             [
-                'name' => 'Makaka Bill',
+                'name' => 'Shikuku Bill',
                 'contact_no' => '+233-123-456-789',
                 'email' => 'billbrewood@gmail.com',
                 'department' => 'Leadership',

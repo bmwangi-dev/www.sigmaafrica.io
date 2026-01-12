@@ -17,9 +17,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         <section className="text-content px-6">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
 
-                <div className="relative">
+                <div className="hidden md:block relative mx-auto max-w-sm md:max-w-none">
                     <div
-                        className="bg-transparent border-2 border-[var(--color-migenta)] absolute -left-8 top-6"
+                        className="hidden md:block bg-transparent border-2 border-[var(--color-migenta)] absolute -left-8 top-6"
                         style={{
                             borderRadius: "4rem 10rem 6rem 6rem",
                             padding: "4px",

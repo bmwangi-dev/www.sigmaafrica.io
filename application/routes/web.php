@@ -46,7 +46,7 @@ Route::get('/about', function () {
     $teams = [
         [
             'id' => 1,
-            'name' => 'Makaka Bill',
+            'name' => 'Shikuku Bill',
             'contact_no' => '+233-123-456-789',
             'email' => 'billbrewood@gmail.com',
             'department' => 'Leadership',

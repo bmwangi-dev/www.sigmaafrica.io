@@ -66,10 +66,10 @@ const Testimonials: React.FC = () => {
                     What They Say
                 </Heading>
 
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className="w-full h-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+                    <div className="w-full">
                         <video
-                            className="w-full h-full object-cover rounded-2xl"
+                            className="w-full aspect-video md:h-[320px] lg:h-full object-cover rounded-xl md:rounded-2xl shadow-lg"
                             controls
                         >
                             <source src={TestimonialVideo} type="video/mp4" />

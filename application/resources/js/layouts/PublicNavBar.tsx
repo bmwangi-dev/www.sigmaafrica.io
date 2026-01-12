@@ -22,8 +22,8 @@ const PublicNavBar: React.FC = () => {
         { label: 'About Us', href: '/about', key: 'about' },
         { label: 'Academy', href: '/academy', key: 'Academy' },
         { label: 'Community', href: '/community', key: 'community' },
-        { label: 'Contact', href: '/contact', key: 'contact' },
         { label: 'Blogs', href: '/blogs', key: 'blogs' },
+        { label: 'Contact', href: '/contact', key: 'contact' },
     ];
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -110,7 +110,7 @@ const PublicNavBar: React.FC = () => {
 
             {menuOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+                    className="fixed inset-0 bg-[var(--color-secondary)]/60 z-30 md:hidden"
                     onClick={toggleMenu}
                     aria-label="Close menu overlay"
                 />

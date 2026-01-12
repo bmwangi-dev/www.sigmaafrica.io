@@ -80,8 +80,8 @@ export default function Index() {
                                     <Text as="p" size="lg" className="text-gray-600 mb-8 leading-relaxed">
                                         {community.description}
                                     </Text>
-                                    <button className="group relative px-8 py-3 bg-transparent overflow-hidden rounded-full border-2 border-[var(--color-sigma-blue)] text-[var(--color-sigma-blue)] hover:text-white transition-colors duration-300">
-                                        <span className="absolute inset-0 w-full h-full bg-[var(--color-sigma-blue)] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                                    <button className="group relative px-8 py-3 bg-transparent overflow-hidden rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:text-white transition-colors duration-300">
+                                        <span className="absolute inset-0 w-full h-full bg-[var(--color-primary)] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
                                         <span className="relative flex items-center justify-center gap-2 font-bold">
                                             Explore More
                                             <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
@@ -92,7 +92,7 @@ export default function Index() {
                         ))}
                     </div>
 
-                    <div className="bg-[var(--color-sigma-blue)] rounded-3xl p-12 text-center shadow-inner">
+                    <div className="bg-gradient-to-r from-[var(--color-primary-note)] to-[var(--color-sigma-blue)] rounded-3xl p-12 text-center shadow-inner">
                         <Heading level={2} size="3xl" weight="bold" className="mb-6 text-white">
                             Ready to make an impact?
                         </Heading>
