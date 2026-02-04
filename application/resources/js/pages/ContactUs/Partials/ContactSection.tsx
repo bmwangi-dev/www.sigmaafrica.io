@@ -65,10 +65,10 @@ const ContactSection = () => {
                         <div className="mt-12">
                             <Heading level={4} size="xl" weight="bold" className="mb-4">Social Media</Heading>
                             <div className="flex gap-4">
-                                <a href="#" className="w-10 h-10 rounded bg-[var(--color-migenta)] flex items-center justify-center">
+                                <a href="https://www.linkedin.com/in/sigma-africa-546793339/" className="w-10 h-10 rounded bg-[var(--color-migenta)] flex items-center justify-center">
                                     <Linkedin className="w-5 h-5" />
                                 </a>
-                                <a href="#" className="w-10 h-10 rounded bg-[var(--color-migenta)] flex items-center justify-center">
+                                <a href="https://x.com/sigma_africa" className="w-10 h-10 rounded bg-[var(--color-migenta)] flex items-center justify-center">
                                     <Twitter className="w-5 h-5" />
                                 </a>
                                 <a href="#" className="w-10 h-10 rounded bg-[var(--color-migenta)] flex items-center justify-center">

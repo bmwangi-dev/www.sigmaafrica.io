@@ -11,7 +11,6 @@ interface WhyChooseUsProps {
 const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
     return (
         <section className="py-16 px-4 relative overflow-hidden">
-            {/* Decorative curved lines similar to AfricaHackon design */}
             <div className="absolute left-0 top-0 bottom-0 w-32 opacity-20">
                 <svg viewBox="0 0 100 800" className="h-full">
                     <path
@@ -40,7 +39,6 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                                 alt="Student learning"
                                 className="w-full h-[400px] object-cover"
                                 onError={(e) => {
-                                    // Fallback if image doesn't exist
                                     const target = e.target as HTMLImageElement;
                                     target.style.display = 'none';
                                 }}
@@ -92,7 +90,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                             </div>
                         </div>
 
-                        <Link href="/contact">
+                        <Link href="/skill-sparks/application">
                             <PrimaryButton className="bg-[var(--color-migenta)] text-white px-8 py-3 rounded-md font-semibold hover:bg-opacity-90 transition-all">
                                 Join Cohort 5
                             </PrimaryButton>

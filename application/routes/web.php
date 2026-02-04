@@ -131,6 +131,10 @@ Route::get('/contact', function () {
     return Inertia::render('ContactUs/Index');
 })->name('contact');
 
+Route::get('/skill-sparks/application', function () {
+    return Inertia::render('Academy/SkillSpark/Index');
+})->name('skill-sparks.application');
+
 Route::get('/notifications/active', [NotificationController::class, 'getActiveNotifications'])
     ->name('notifications.active');
 

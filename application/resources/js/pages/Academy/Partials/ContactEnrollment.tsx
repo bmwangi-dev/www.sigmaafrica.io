@@ -34,8 +34,8 @@ const ContactEnrollment: React.FC<ContactEnrollmentProps> = ({ imageSrc }) => {
     };
 
     const statistics = [
-        { value: '10+', label: 'Years of Experience' },
-        { value: '25+', label: 'Experienced Trainers' },
+        { value: '5+', label: 'Years of Experience' },
+        { value: '10+', label: 'Experienced Trainers' },
         { value: '500+', label: 'Trained Professionals' },
     ];
 
