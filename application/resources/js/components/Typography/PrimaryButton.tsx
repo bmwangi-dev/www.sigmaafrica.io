@@ -15,7 +15,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     onClick,
     ...props
 }) => {
-    const isDisabled = disabled || loading;
+    const isDisabled = disabled || loading || props.type === 'submit';
 
     return (
         <button

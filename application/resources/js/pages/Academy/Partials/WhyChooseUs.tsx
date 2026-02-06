@@ -92,7 +92,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
 
                         <Link href="/skill-sparks/application">
                             <PrimaryButton className="bg-[var(--color-migenta)] text-white px-8 py-3 rounded-md font-semibold hover:bg-opacity-90 transition-all">
-                                Join Cohort 5
+                                Apply Now
                             </PrimaryButton>
                         </Link>
                     </div>

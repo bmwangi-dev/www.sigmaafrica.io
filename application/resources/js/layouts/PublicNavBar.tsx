@@ -25,6 +25,7 @@ const PublicNavBar: React.FC<PublicNavBarProps> = ({ onlyHome = false }) => {
         { label: 'Home', href: '/', key: 'home' },
         { label: 'About Us', href: '/about', key: 'about' },
         { label: 'Academy', href: '/academy', key: 'Academy' },
+        { label: 'Services', href: '/services', key: 'services' },
         { label: 'Community', href: '/community', key: 'community' },
         { label: 'Blogs', href: '/blogs', key: 'blogs' },
         { label: 'Contact', href: '/contact', key: 'contact' },

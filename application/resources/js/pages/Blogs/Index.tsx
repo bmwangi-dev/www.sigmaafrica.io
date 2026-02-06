@@ -69,12 +69,12 @@ export default function Index() {
                                         {blog.description}
                                     </p>
                                     <div>
-                                        <Link
-                                            href={blog.link}
-                                            className="inline-block px-6 py-2.5 rounded-lg border-2 border-[var(--color-migenta)] text-[var(--color-migenta)] font-bold hover:bg-[var(--color-migenta)] hover:text-white transition-all duration-300"
+                                        <button
+                                            disabled
+                                            className="inline-block px-6 py-2.5 rounded-lg border-2 border-[var(--color-migenta)] text-[var(--color-migenta)] font-bold opacity-50 cursor-not-allowed"
                                         >
                                             Read More
-                                        </Link>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

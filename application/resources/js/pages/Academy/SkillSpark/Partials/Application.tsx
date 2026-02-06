@@ -203,9 +203,9 @@ const ApplicationSection = () => {
                                         </div>
                                     </div>
 
-                                    <button type="submit" disabled={processing}
-                                        className="w-full bg-[var(--color-migenta)] hover:brightness-110 text-white font-bold py-5 rounded-2xl transition-all duration-300 shadow-xl active:scale-[0.98] disabled:opacity-50">
-                                        {processing ? 'Processing Application...' : 'Submit Application'}
+                                    <button type="submit" disabled={true}
+                                        className="w-full bg-[var(--color-migenta)] text-white font-bold py-5 rounded-2xl shadow-xl opacity-50 cursor-not-allowed">
+                                        Submit Application (Closed)
                                     </button>
                                 </form>
                             </>

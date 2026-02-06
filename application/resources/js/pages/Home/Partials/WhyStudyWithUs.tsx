@@ -60,8 +60,8 @@ const WhyStudyWithUs = () => {
                         <Text as="p" size="base" weight="normal" className="mb-4">
                             Ready to take your skills to the next level? Reach out to us today and let’s get started!
                         </Text>
-                        <PrimaryButton className="bg-white text-[var(--color-primary)] px-4 py-2 rounded-md font-semibold hover:cursor-pointer hover:bg-[var(--color-migenta)] transition">
-                            Contact Us
+                        <PrimaryButton disabled={true} className="bg-white text-[var(--color-primary)] px-4 py-2 rounded-md font-semibold opacity-50 cursor-not-allowed">
+                            Contact Us (Closed)
                         </PrimaryButton>
                     </div>
                 </div>

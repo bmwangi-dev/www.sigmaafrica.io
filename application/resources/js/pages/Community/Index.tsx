@@ -80,11 +80,9 @@ export default function Index() {
                                     <Text as="p" size="lg" className="text-gray-600 mb-8 leading-relaxed">
                                         {community.description}
                                     </Text>
-                                    <button className="group relative px-8 py-3 bg-transparent overflow-hidden rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:text-white transition-colors duration-300">
-                                        <span className="absolute inset-0 w-full h-full bg-[var(--color-primary)] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                                    <button disabled className="group relative px-8 py-3 bg-transparent overflow-hidden rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] opacity-50 cursor-not-allowed">
                                         <span className="relative flex items-center justify-center gap-2 font-bold">
                                             Explore More
-                                            <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
                                         </span>
                                     </button>
                                 </div>
@@ -99,12 +97,12 @@ export default function Index() {
                         <Text as="p" size="xl" className="text-gray-300 mb-10 max-w-2xl mx-auto">
                             Join thousands of others who are shaping the future of technology in Africa.
                         </Text>
-                        <Link
-                            href="/contact"
-                            className="inline-block bg-[var(--color-migenta)] text-white px-12 py-4 rounded-full text-lg font-bold hover:bg-opacity-90 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                        <button
+                            disabled
+                            className="inline-block bg-[var(--color-migenta)] text-white px-12 py-4 rounded-full text-lg font-bold opacity-50 cursor-not-allowed"
                         >
-                            Become a member
-                        </Link>
+                            Become a member (Closed)
+                        </button>
                     </div>
                 </div>
             </div>

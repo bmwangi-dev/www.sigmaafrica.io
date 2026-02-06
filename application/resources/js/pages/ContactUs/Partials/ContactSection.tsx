@@ -158,10 +158,10 @@ const ContactSection = () => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                disabled={processing}
-                                className="w-full bg-[var(--color-migenta)] hover:bg-[#e59400] text-white font-bold py-4 rounded-lg transition-colors duration-300 shadow-lg"
+                                disabled={true}
+                                className="w-full bg-[var(--color-migenta)] text-white font-bold py-4 rounded-lg shadow-lg opacity-50 cursor-not-allowed"
                             >
-                                Submit Now
+                                Submit Now (Closed)
                             </button>
                         </form>
                     </div>

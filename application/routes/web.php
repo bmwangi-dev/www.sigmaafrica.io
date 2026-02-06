@@ -96,6 +96,11 @@ Route::get('/contact', function () {
     return Inertia::render('ContactUs/Index');
 })->name('contact');
 
+Route::get('/services', function () {
+    return Inertia::render('Services/Index');
+})->name('services');
+
+
 Route::get('/skill-sparks/application', function () {
     return Inertia::render('Academy/SkillSpark/Index');
 })->name('skill-sparks.application');

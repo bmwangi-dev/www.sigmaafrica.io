@@ -28,8 +28,8 @@ export default function PublicFooter() {
                                 aria-label="Email"
                                 className="px-3 text-[var(--color-content)] sm:w-auto flex-grow"
                             />
-                            <PrimaryButton className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-md font-semibold hover:cursor-pointer hover:bg-[var(--color-migenta)] transition">
-                                Contact Us
+                            <PrimaryButton disabled={true} className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-md font-semibold opacity-50 cursor-not-allowed">
+                                Contact Us (Closed)
                             </PrimaryButton>
                         </form>
                     </div>
@@ -57,6 +57,7 @@ export default function PublicFooter() {
                             <li><a href="/" className="hover:underline">Home</a></li>
                             <li><a href="/about" className="hover:underline">About Us</a></li>
                             <li><a href="/academy" className="hover:underline">Academy</a></li>
+                            <li><a href="/services" className="hover:underline">Services</a></li>
                             <li><a href="/community" className="hover:underline">Community</a></li>
                             <li><a href="/blogs" className="hover:underline">Blogs</a></li>
                             <li><a href="/contact" className="hover:underline">Contact Us</a></li>
@@ -66,17 +67,19 @@ export default function PublicFooter() {
                     <div>
                         <Heading level={3} size="xl" weight="bold" className="font-bold text-base mb-2">Our Services</Heading>
                         <ul className="space-y-1">
-                            <li><a href="/datascience.html" className="hover:underline">Data Science</a></li>
-                            <li><a href="#" className="hover:underline">Academic & Market Research</a></li>
-                            <li><a href="#" className="hover:underline">Business Consultancy</a></li>
-                            <li><a href="#" className="hover:underline">Software Development</a></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Website Development</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Web App Development</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">SEO</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Digital Marketing</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Academic & Market Research</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Business Consultancy</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div className="mt-5 text-center text-xs">
-                &copy;2025 Sigma <span className="text-[var(--color-migenta)]">Africa</span> Accelerate
+                &copy;2026 Sigma <span className="text-[var(--color-migenta)]">Africa</span> Accelerate
             </div>
         </footer>
     );
