@@ -13,11 +13,15 @@ interface NavigationItem {
     key: string;
 }
 
-const PublicNavBar: React.FC = () => {
+interface PublicNavBarProps {
+    onlyHome?: boolean;
+}
+
+const PublicNavBar: React.FC<PublicNavBarProps> = ({ onlyHome = false }) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const { url } = usePage();
 
-    const navigationItems: NavigationItem[] = [
+    const allNavigationItems: NavigationItem[] = [
         { label: 'Home', href: '/', key: 'home' },
         { label: 'About Us', href: '/about', key: 'about' },
         { label: 'Academy', href: '/academy', key: 'Academy' },
@@ -25,6 +29,10 @@ const PublicNavBar: React.FC = () => {
         { label: 'Blogs', href: '/blogs', key: 'blogs' },
         { label: 'Contact', href: '/contact', key: 'contact' },
     ];
+
+    const navigationItems = onlyHome
+        ? allNavigationItems.filter(item => item.key === 'home')
+        : allNavigationItems;
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
 

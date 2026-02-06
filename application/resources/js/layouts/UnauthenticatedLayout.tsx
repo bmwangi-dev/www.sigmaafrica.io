@@ -1,17 +1,18 @@
 import PublicNavBar from './PublicNavBar';
 import PublicFooter from './PublicFooter';
 import BackToTop from '@/components/ui/BackToTop';
-import NotificationCard from '@/pages/Admin/Notifications/Index';
+
 import { ReactNode } from 'react';
 
 interface UnauthenticatedLayoutProps {
     children: ReactNode;
+    onlyHome?: boolean;
 }
 
-export default function UnauthenticatedLayout({ children }: UnauthenticatedLayoutProps) {
+export default function UnauthenticatedLayout({ children, onlyHome = false }: UnauthenticatedLayoutProps) {
     return (
         <div className="flex min-h-screen flex-col">
-            <PublicNavBar />
+            <PublicNavBar onlyHome={onlyHome} />
             <main className="flex-1">
                 {children}
                 <BackToTop />

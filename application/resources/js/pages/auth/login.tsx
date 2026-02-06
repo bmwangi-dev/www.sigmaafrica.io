@@ -35,7 +35,7 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
     };
 
     return (
-        <UnauthenticatedLayout>
+        <UnauthenticatedLayout onlyHome={true}>
             <Head title="Log in" />
             <AuthCardLayout
                 title="Welcome back"
@@ -51,7 +51,6 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
                             type="email"
                             name="email"
                             value={data.email}
-                            className="block w-full border border-[var(--color-primary)] focus:ring-2 focus:ring-white"
                             autoComplete="username"
                             placeholder="Enter your email"
                             onChange={(e) => setData('email', e.target.value)}
@@ -73,8 +72,8 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
                                 type={showPassword ? 'text' : 'password'}
                                 name="password"
                                 value={data.password}
-                                className="block w-full pr-10 border border-[var(--color-primary)] focus:ring-2 focus:ring-white"
                                 autoComplete="current-password"
+                                className="pr-10"
                                 placeholder="Enter your password"
                                 onChange={(e) => setData('password', e.target.value)}
                                 required
@@ -103,6 +102,7 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
                                 id="remember"
                                 checked={data.remember}
                                 onCheckedChange={(checked) => setData('remember', checked)}
+                                className="cursor-pointer border-2 border-[var(--color-migenta)]"
                             />
                             <Label htmlFor="remember" className="text-sm text-[var(--color-sigma-blue)]">
                                 Remember me
@@ -121,7 +121,7 @@ export default function Login({ status, canResetPassword }: LoginPageProps) {
 
                     <Button
                         type="submit"
-                        className="w-full bg-[var(--color-primary)] text-white font-semibold py-2 rounded-lg shadow-md cursor-pointer"
+                        className="w-full"
                         disabled={processing}
                     >
                         {processing ? 'Signing in...' : 'Sign in'}

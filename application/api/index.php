@@ -79,14 +79,11 @@ try {
 
     $kernel->terminate($request, $response);
 } catch (Throwable $e) {
-    // Log to stderr for Vercel logs (this doesn't output to browser)
     error_log('Laravel Fatal Error: ' . $e->getMessage());
     error_log('File: ' . $e->getFile() . ' Line: ' . $e->getLine());
     error_log($e->getTraceAsString());
 
-    // Only show detailed errors in non-production
     if (getenv('APP_ENV') !== 'production' || getenv('APP_DEBUG') === 'true') {
-        // Use output buffering to prevent headers already sent
         if (!headers_sent()) {
             http_response_code(500);
             header('Content-Type: text/html; charset=utf-8');
@@ -100,7 +97,6 @@ try {
         echo '<p><em>To disable this, set APP_DEBUG=false in Vercel environment variables</em></p>';
         echo '</body></html>';
     } else {
-        // Production: Show minimal error
         if (!headers_sent()) {
             http_response_code(500);
             header('Content-Type: text/html; charset=utf-8');
