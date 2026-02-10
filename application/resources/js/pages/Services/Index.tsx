@@ -1,24 +1,22 @@
-import React from 'react';
 import { Head } from '@inertiajs/react';
 import UnauthenticatedLayout from '@/layouts/UnauthenticatedLayout';
 import Heading from '@/components/Typography/Heading';
+import ServiceContactForm from '@/pages/Services/Partials/ServiceContactForm';
 import Text from '@/components/Typography/Text';
 import { CheckCircle2, Globe, Layout, Search, Megaphone, TrendingUp, Briefcase } from 'lucide-react';
 import { Header } from '@/components/ui/Header';
 
-// Placeholder images - using existing ones from the project
 import studentImg from '../../../../public/academy-student.png';
 import dsImg from '../../../../public/datascience.png';
-// import aiImg from '../../../../public/ai.jpeg';
 
 export default function Index() {
     const servicesList = [
         "Website Development",
         "Application Development",
+        "Data Science",
         "Digital Marketing",
-        "SEO (Search Engine Optimization)",
         "Academic & Market Research",
-        "Business Consultancy"
+        "Data-Centric Business Consultancy"
     ];
 
     const serviceCards = [
@@ -34,12 +32,12 @@ export default function Index() {
         },
         {
             icon: Search,
-            title: "SEO",
-            description: "Improve your search engine rankings and drive organic traffic with data-driven SEO strategies and technical optimizations."
+            title: "Data Science",
+            description: "Leverage advanced analytics and machine learning to extract actionable insights from complex datasets, driving data-informed decision-making and predictive modeling."
         },
         {
             icon: Megaphone,
-            title: "Marketing",
+            title: "Digital Marketing",
             description: "Targeted campaigns across various channels including social media, email, and PPC to boost brand awareness and lead generation."
         },
         {
@@ -49,8 +47,8 @@ export default function Index() {
         },
         {
             icon: Briefcase,
-            title: "Business Consultancy",
-            description: "Expert advice and strategic planning to help your business overcome challenges, optimize processes, and achieve sustainable growth."
+            title: "Data-Centric Business Consultancy",
+            description: "Leverage data-backed strategies and actionable insights to overcome business challenges, optimize operations, and achieve sustainable growth."
         }
     ];
 
@@ -72,10 +70,8 @@ export default function Index() {
             <div className="min-h-screen py-10">
                 <div className="container mx-auto px-4">
 
-                    {/* Top Section: 360-degree Solution */}
                     <div className="flex flex-col lg:flex-row items-center gap-16 mb-10">
 
-                        {/* Left: Content */}
                         <div className="w-full lg:w-1/2 space-y-8">
                             <div>
                                 <Heading level={2} size="4xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-2">
@@ -100,7 +96,6 @@ export default function Index() {
                             </div>
                         </div>
 
-                        {/* Right: Image Collage */}
                         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[500px]">
                             <div className="absolute top-0 right-0 w-2/3 h-2/3 rounded-3xl overflow-hidden shadow-xl ring-4 ring-[var(--color-migenta)] z-10">
                                 <img src={studentImg} alt="Team collaboration" className="w-full h-full object-cover" />
@@ -108,13 +103,11 @@ export default function Index() {
                             <div className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-3xl overflow-hidden shadow-xl ring-4 ring-[var(--color-migenta)] z-20">
                                 <img src={dsImg} alt="Data Analysis" className="w-full h-full object-cover" />
                             </div>
-                            {/* Decorative dots/shapes */}
                             <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[var(--color-migenta)] rounded-2xl -z-10 opacity-20 transform -translate-y-1/2 -rotate-12"></div>
                             <div className="absolute bottom-10 right-10 w-16 h-16 bg-[var(--color-primary)] rounded-full z-30 opacity-80"></div>
                         </div>
                     </div>
 
-                    {/* Bottom Section: Services Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {serviceCards.map((card, index) => (
                             <div key={index} className="bg-gray-800 text-white p-8 rounded-2xl border-2 border-transparent hover:border-[var(--color-migenta)] transition-all duration-300 group">
@@ -131,6 +124,8 @@ export default function Index() {
                             </div>
                         ))}
                     </div>
+
+                    <ServiceContactForm />
 
                 </div>
             </div>

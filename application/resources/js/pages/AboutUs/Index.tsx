@@ -33,33 +33,24 @@ export default function Index({ teams }: AboutUsProps) {
                 showStatistics={false}
             />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-start w-full py-8">
-                <AboutSection
-                    imageSrc={Datascience}
-                    smallTitle="3 Years of Impact"
-                    bigTitle="Driving Data Science Excellence in Africa"
-                    description="Founded in 2022, Sigma Africa is a leading collective dedicated to shaping Africa’s data-driven future. We build skilled talent, foster innovation, and strengthen the continent’s data ecosystem."
-                    paragraph="We empower industries with data-driven insights and transformative solutions—optimizing decisions, streamlining operations, and fueling sustainable growth through analytics and digital innovation."
-                />
-            </div>
+            <AboutSection
+                imageSrc={Datascience}
+                smallTitle="3 Years of Impact"
+                bigTitle="Driving Data Science Excellence in Africa"
+                description="Founded in 2022, Sigma Africa is a leading collective dedicated to shaping Africa’s data-driven future. We build skilled talent, foster innovation, and strengthen the continent’s data ecosystem."
+                paragraph="We empower industries with data-driven insights and transformative solutions—optimizing decisions, streamlining operations, and fueling sustainable growth through analytics and digital innovation."
+            />
 
-            <div>
-                <MeetTheTeam teams={teams} />
-            </div>
+            <MeetTheTeam teams={teams} />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-start w-full py-8">
-                <HowWeEmpower
-                    imageSrc={howweempower}
-                    bigTitle="How We Empower Data-Driven Growth"
-                />
-            </div>
+            <HowWeEmpower
+                imageSrc={howweempower}
+                bigTitle="How We Empower Data-Driven Growth"
+            />
 
-            <div>
-                <OurPartners />
-            </div>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
-                <FutureSection />
-            </div>
+            <OurPartners />
+
+            <FutureSection />
         </UnauthenticatedLayout>
     );
 }

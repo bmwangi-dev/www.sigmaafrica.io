@@ -12,50 +12,33 @@ const HowWeEmpower: React.FC<HowWeEmpowerProps> = ({
     imageSrc, bigTitle,
 }) => {
     return (
-        <section className="text-content px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <Heading
-                        level={2}
-                        size="3xl"
-                        weight="bold"
-                        className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto md:text-4xl leading-tight"
-                    >
-                        {bigTitle}
-                    </Heading>
-                    <HowWeEmpowerList />
-                </div>
+        <section className="py-16 px-4">
+            <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <Heading
+                            level={2}
+                            size="4xl"
+                            weight="bold"
+                            className="text-[var(--color-sigma-blue)] mb-8 leading-tight"
+                        >
+                            {bigTitle}
+                        </Heading>
+                        <HowWeEmpowerList />
+                    </div>
 
-                <div className="flex justify-center items-center relative w-full max-w-sm mx-auto md:max-w-none">
-                    <div
-                        className="bg-transparent border-2 border-[var(--color-migenta)] absolute -left-4 top-4 md:-left-8 md:top-6"
-                        style={{
-                            borderRadius: "3rem 6rem 4rem 4rem",
-                            padding: "4px",
-                            width: "100%",
-                            height: "100%",
-                            zIndex: 0,
-                        }}
-                    ></div>
-
-                    <div
-                        className="overflow-hidden border-2 border-white relative w-full aspect-[4/3] md:aspect-auto"
-                        style={{
-                            borderRadius: "3rem 6rem 4rem 4rem",
-                            zIndex: 2,
-                        }}
-                    >
-                        <img
-                            src={imageSrc}
-                            alt="How We Empower"
-                            className="block w-full h-full object-cover rounded-none"
-                        />
+                    <div className="relative">
+                        <div className="overflow-hidden rounded-2xl shadow-xl">
+                            <img
+                                src={imageSrc}
+                                alt="Empowering Data-Driven Growth"
+                                className="w-full h-[500px] object-cover"
+                            />
+                        </div>
+                        <div className="absolute -top-6 -left-6 w-24 h-24 bg-[var(--color-migenta)] rounded-2xl -z-10 opacity-20 transform -rotate-12"></div>
                     </div>
                 </div>
-
-
             </div>
-
         </section>
     );
 };

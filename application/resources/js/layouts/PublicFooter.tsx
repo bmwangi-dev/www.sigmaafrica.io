@@ -69,10 +69,10 @@ export default function PublicFooter() {
                         <ul className="space-y-1">
                             <li><span className="text-gray-400 cursor-not-allowed">Website Development</span></li>
                             <li><span className="text-gray-400 cursor-not-allowed">Web App Development</span></li>
-                            <li><span className="text-gray-400 cursor-not-allowed">SEO</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Data Science</span></li>
                             <li><span className="text-gray-400 cursor-not-allowed">Digital Marketing</span></li>
                             <li><span className="text-gray-400 cursor-not-allowed">Academic & Market Research</span></li>
-                            <li><span className="text-gray-400 cursor-not-allowed">Business Consultancy</span></li>
+                            <li><span className="text-gray-400 cursor-not-allowed">Data-Centric Business Consultancy</span></li>
                         </ul>
                     </div>
                 </div>

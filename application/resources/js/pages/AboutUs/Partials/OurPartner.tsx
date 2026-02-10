@@ -3,6 +3,7 @@ import React from "react";
 const partners = [
     { name: "JKUAT", logo: "/jkuat.png" },
     { name: "Technical University of Kenya", logo: "/tuk.png" },
+    { name: "University Of Nairobi", logo: "/university-of-nairobi.webp" },
     { name: "Sinapis Group", logo: "/sinapis.png" },
 ];
 
@@ -10,7 +11,6 @@ const OurPartners: React.FC = () => {
     return (
         <section className="py-12">
             <div className="max-w-6xl mx-auto text-center px-6">
-                {/* Heading */}
                 <h2 className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto text-3xl font-bold">
                     Our Partners
                 </h2>
@@ -18,8 +18,7 @@ const OurPartners: React.FC = () => {
                     Collaborating for a brighter future.
                 </p>
 
-                {/* Partner Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {partners.map((partner, idx) => (
                         <div
                             key={idx}

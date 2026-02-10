@@ -2,67 +2,97 @@ import StudyWithUsImage from '../../../../../public/ai.jpeg'
 import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
+import { BookOpen, Users, Laptop, Award, PhoneCall } from 'lucide-react';
+
 const WhyStudyWithUs = () => {
     const benefits = [
         {
-            icon: '📝',
+            icon: <BookOpen className="w-6 h-6" />,
             title: 'Market driven skills',
             description:
-                'We maximize your relevance and value in the job market by focusing on skills and knowledge that are in high demand. You’ll gain practical, hands-on experience in the tools and techniques companies actively seek, giving you a competitive edge, faster career advancement, and increased job satisfaction by working on projects that truly matter.',
+                'We maximize your relevance and value in the job market by focusing on skills and knowledge that are in high demand. You’ll gain practical, hands-on experience in the tools and techniques companies actively seek.',
         },
         {
-            icon: '🧑‍🏫',
+            icon: <Users className="w-6 h-6" />,
             title: 'Personalised training',
             description:
-                'We tailor the learning experience to your unique needs and goals, helping you master essential skills more effectively. By focusing on areas where you need the most development, you’ll progress faster, gain confidence, and be better equipped to tackle real-world challenges.',
+                'We tailor the learning experience to your unique needs and goals, helping you master essential skills more effectively by focusing on areas where you need the most development.',
         },
         {
-            icon: '💻',
+            icon: <Laptop className="w-6 h-6" />,
             title: 'Practical approach',
             description:
-                'We emphasize hands-on learning, where you apply concepts directly to real-world scenarios. This method enhances your problem-solving skills, builds confidence, and ensures you’re job-ready with skills that go beyond theory. By working through real challenges, you’ll gain valuable experience and be better prepared for the demands of your industry.',
+                'We emphasize hands-on learning, where you apply concepts directly to real-world scenarios. This method enhances your problem-solving skills and ensures you’re job-ready.',
         },
         {
-            icon: '👨‍🔧',
+            icon: <Award className="w-6 h-6" />,
             title: 'Certified Trainers',
             description:
-                'Our certified trainers are experts who meet industry standards and bring proven skills to the table. Their credentials and experience mean you’ll receive high-quality instruction, practical insights, and guidance that aligns with best practices.',
+                'Our certified trainers are experts who meet industry standards and bring proven skills to the table, providing high-quality instruction and practical insights.',
         },
     ];
 
     return (
-        <section className="px-4 sm:pt-4 mt-4">
-            <div className="container mx-auto flex flex-col lg:flex-row gap-8 gap-y-8 items-start">
-                <div className="bg-white rounded-xl shadow-md p-8 flex-1">
-                    <Heading level={2} size="3xl" weight="bold" className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg text-center max-w-2xl mx-auto mb-6">WHY STUDY WITH US?</Heading>
-                    <div className="space-y-6">
-                        {benefits.map((benefit, idx) => (
-                            <div key={idx} className="flex items-start gap-4">
-                                <div className="text-2xl hidden sm:block">{benefit.icon}</div>
-                                <div>
-                                    <Heading level={3} size="lg" weight="semibold" className="text-[var(--color-sigma-blue)]">{benefit.title}</Heading>
-                                    <Text as="p" size="base" weight="normal" className="text-gray-700 mt-1">{benefit.description}</Text>
+        <section className="py-16 px-4">
+            <div className="container mx-auto">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                    <div className="flex-1 bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-12">
+                        <div className="mb-10 text-center lg:text-left">
+                            <Text as="p" size="sm" weight="semibold" className="text-[var(--color-migenta)] uppercase tracking-widest mb-3">
+                                Why Choose Us
+                            </Text>
+                            <Heading level={2} size="4xl" weight="bold" className="text-[var(--color-sigma-blue)]">
+                                Why Study With Us?
+                            </Heading>
+                        </div>
+
+                        <div className="space-y-8">
+                            {benefits.map((benefit, idx) => (
+                                <div key={idx} className="flex items-start gap-4 group">
+                                    <div className="p-3 rounded-xl bg-[var(--color-primary-note)] text-[var(--color-migenta)] group-hover:bg-[var(--color-migenta)] group-hover:text-white transition-all duration-300">
+                                        {benefit.icon}
+                                    </div>
+                                    <div>
+                                        <Heading level={3} size="xl" weight="semibold" className="text-[var(--color-sigma-blue)] mb-2">
+                                            {benefit.title}
+                                        </Heading>
+                                        <Text as="p" size="base" weight="normal" className="text-gray-600 leading-relaxed">
+                                            {benefit.description}
+                                        </Text>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                <div className="flex-1 flex flex-col h-full">
-                    <img
-                        src={StudyWithUsImage}
-                        alt="Smiling student"
-                        className="rounded-xl w-full object-cover flex-grow max-h-96 sm:max-h-full"
-                    />
+                    <div className="flex-1 flex flex-col gap-6 w-full lg:sticky lg:top-24">
+                        <div className="relative group">
+                            <div className="overflow-hidden rounded-2xl shadow-xl">
+                                <img
+                                    src={StudyWithUsImage}
+                                    alt="Learning at Sigma Africa"
+                                    className="w-full h-[350px] lg:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[var(--color-migenta)] rounded-2xl -z-10 opacity-20 transform rotate-12"></div>
+                        </div>
 
-                    <div className="bg-[var(--color-primary)] text-white mt-2 p-6 rounded-xl flex flex-col justify-center items-start flex-grow">
-                        <Heading level={4} size="xl" weight="semibold" className="mb-2">Get in Touch With Us</Heading>
-                        <Text as="p" size="base" weight="normal" className="mb-4">
-                            Ready to take your skills to the next level? Reach out to us today and let’s get started!
-                        </Text>
-                        <PrimaryButton disabled={true} className="bg-white text-[var(--color-primary)] px-4 py-2 rounded-md font-semibold opacity-50 cursor-not-allowed">
-                            Contact Us (Closed)
-                        </PrimaryButton>
+                        <div className="bg-[var(--color-primary)] text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <PhoneCall className="w-6 h-6 text-[var(--color-migenta)]" />
+                                    <Heading level={4} size="xl" weight="semibold">Get in Touch With Us</Heading>
+                                </div>
+                                <Text as="p" size="base" weight="normal" className="text-gray-300 mb-6">
+                                    Ready to take your skills to the next level? Reach out to us today and let’s get started!
+                                </Text>
+                                <PrimaryButton disabled={true} className="w-full bg-white/10 hover:bg-white/20 border-2 border-white/20 text-white px-6 py-3 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                                    Enrollment Closed
+                                </PrimaryButton>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

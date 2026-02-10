@@ -57,14 +57,19 @@ const Testimonials: React.FC = () => {
     return (
         <section className="py-12">
             <div className="container mx-auto px-4">
-                <Heading
-                    level={2}
-                    size="4xl"
-                    weight="bold"
-                    className="text-center mb-10 bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg text-center max-w-2xl mx-auto"
-                >
-                    What They Say
-                </Heading>
+                <div className="text-center mb-16">
+                    <Text as="p" size="sm" weight="semibold" className="text-[var(--color-migenta)] uppercase tracking-widest mb-3">
+                        Testimonials
+                    </Text>
+                    <Heading
+                        level={2}
+                        size="4xl"
+                        weight="bold"
+                        className="text-[var(--color-sigma-blue)]"
+                    >
+                        What They Say
+                    </Heading>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
                     <div className="w-full">

@@ -1,6 +1,7 @@
 import React from 'react';
+import Heading from '@/components/Typography/Heading';
+import Text from '@/components/Typography/Text';
 import TeamProfile from '../../../components/TeamProfile';
-import '../MeetTheTeam.css';
 import type { TeamData } from '../../../types/Team';
 
 interface MeetTheTeamProps {
@@ -8,29 +9,35 @@ interface MeetTheTeamProps {
 }
 
 const MeetTheTeam: React.FC<MeetTheTeamProps> = ({ teams = [] }) => (
-    <section className="meet-team py-16 px-6 text-center">
-        <div className="max-w-7xl mx-auto">
-            <h6 className="text-sm text-[var(--color-migenta)] uppercase mb-2 tracking-wide">The Professionals</h6>
-            <h2 className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto text-4xl font-bold">Meet The Team</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto mb-12 text-lg leading-relaxed">
-                Our team at Sigma Africa is composed of passionate data scientists, engineers, and industry experts
-                dedicated to driving Africa's digital transformation through innovative analytics and data-driven solutions.
-            </p>
+    <section className="py-16 px-4">
+        <div className="container mx-auto">
+            <div className="text-center mb-16">
+                <Text as="p" size="sm" weight="semibold" className="text-[var(--color-migenta)] uppercase tracking-widest mb-3">
+                    The Professionals
+                </Text>
+                <Heading level={2} size="4xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-6">
+                    Meet Our Expert Team
+                </Heading>
+                <Text as="p" size="lg" className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Our team at Sigma Africa is composed of passionate data scientists, engineers, and industry experts
+                    dedicated to driving Africa's digital transformation.
+                </Text>
+            </div>
 
             {teams.length > 0 ? (
-                <div className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {teams.map((member, idx) => (
                         <TeamProfile
                             key={member.id}
                             member={member}
                             animationDelay={idx * 0.1}
-                            className="transform hover:-translate-y-2"
+                            className="transform hover:-translate-y-2 transition-transform duration-300"
                         />
                     ))}
                 </div>
             ) : (
                 <div className="text-center py-12">
-                    <div className="bg-white rounded-lg shadow-md p-8 max-w-md mx-auto">
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-md mx-auto">
                         <svg className="w-16 h-16 text-gray-300 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
                             <path
                                 fillRule="evenodd"
@@ -38,10 +45,10 @@ const MeetTheTeam: React.FC<MeetTheTeamProps> = ({ teams = [] }) => (
                                 clipRule="evenodd"
                             />
                         </svg>
-                        <h3 className="text-lg font-semibold text-gray-700 mb-2">No Team Members Yet</h3>
-                        <p className="text-gray-500 text-sm">
+                        <Heading level={3} size="xl" weight="bold" className="text-gray-700 mb-2">No Team Members Yet</Heading>
+                        <Text as="p" size="sm" className="text-gray-500">
                             Team members will appear here once they are added to the database.
-                        </p>
+                        </Text>
                     </div>
                 </div>
             )}
