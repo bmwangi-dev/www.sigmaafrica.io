@@ -4,9 +4,10 @@ import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 import { Phone, Mail, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 const ContactSection = () => {
-    const { data, setData, post, processing, errors } = useForm({
+    const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
         phone: '',
@@ -16,8 +17,12 @@ const ContactSection = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // post(route('contact.store')); // Ensure this route exists or update accordingly
-        console.log('Form submitted', data);
+        post('/contact', {
+            onSuccess: () => {
+                reset();
+                toast.success('Message sent successfully!');
+            },
+        });
     };
 
     return (
@@ -158,10 +163,10 @@ const ContactSection = () => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                disabled={true}
-                                className="w-full bg-[var(--color-migenta)] text-white font-bold py-4 rounded-lg shadow-lg opacity-50 cursor-not-allowed"
+                                disabled={processing}
+                                className="w-full bg-[var(--color-migenta)] text-white font-bold py-4 rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
                             >
-                                Submit Now (Closed)
+                                {processing ? 'Submitting...' : 'Submit Now'}
                             </button>
                         </form>
                     </div>

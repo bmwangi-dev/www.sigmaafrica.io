@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SkillSparkController;
 
 Route::get('/', function () {
     return Inertia::render('Home/Index');
@@ -104,6 +106,11 @@ Route::get('/services', function () {
 Route::get('/skill-sparks/application', function () {
     return Inertia::render('Academy/SkillSpark/Index');
 })->name('skill-sparks.application');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/services/consultation', [ContactController::class, 'submitConsultation'])->name('services.consultation');
+Route::post('/newsletter/subscribe', [ContactController::class, 'subscribeNewsletter'])->name('newsletter.subscribe');
+Route::post('/skill-sparks/apply', [SkillSparkController::class, 'apply'])->name('skill-sparks.apply');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {

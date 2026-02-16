@@ -4,7 +4,7 @@ import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
 import LearningJourney from "./Partials/LearningJourney";
 import WhyChooseUs from "./Partials/WhyChooseUs";
 import WorkProcess from "./Partials/WorkProcess";
-import ContactEnrollment from "./Partials/ContactEnrollment";
+import FAQSection from "./Partials/FAQSection";
 import studentImage from "../../../../public/academy-student.png";
 import groupImage from "../../../../public/academy-group.png";
 import trainersImage from "../../../../public/academy-trainers.png";
@@ -32,9 +32,9 @@ function Index() {
 
             <WorkProcess images={[groupImage, studentImage, trainersImage]} />
 
-            <ContactEnrollment imageSrc={trainersImage} />
+            <FAQSection imageSrc={trainersImage} />
         </UnauthenticatedLayout>
-    )
+    );
 }
 
 export default Index

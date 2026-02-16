@@ -121,13 +121,6 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
                         </div>
                     </div>
                 </div>
-
-                {/* CTA Banner */}
-                <div className="bg-[var(--color-migenta)] text-white py-6 px-8 rounded-lg mt-12 text-center">
-                    <Text as="p" size="xl" weight="semibold">
-                        Don't Wait For The Future To Find You—Create It. Step Into The Dynamic World Of Data Science Today.
-                    </Text>
-                </div>
             </div>
         </section>
     );

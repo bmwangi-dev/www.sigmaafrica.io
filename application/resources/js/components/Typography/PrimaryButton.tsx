@@ -15,12 +15,12 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     onClick,
     ...props
 }) => {
-    const isDisabled = disabled || loading || props.type === 'submit';
+    const isDisabled = disabled || loading;
 
     return (
         <button
             type="button"
-            className={`font-semibold px-4 py-2 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center ${fullWidth ? 'w-full' : 'w-fit'} ${className}`}
+            className={`font-semibold px-4 py-2 rounded-md transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center ${fullWidth ? 'w-full' : 'w-fit'} ${className}`}
             disabled={isDisabled}
             onClick={(e) => {
                 if (!isDisabled && onClick) onClick(e);

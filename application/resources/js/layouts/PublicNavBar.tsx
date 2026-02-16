@@ -54,7 +54,7 @@ const PublicNavBar: React.FC<PublicNavBarProps> = ({ onlyHome = false }) => {
     };
 
     return (
-        <nav className="bg-[var(--color-secondary)] shadow-md relative fixed top-0 left-0 w-full z-50">
+        <nav className="bg-[var(--color-secondary)] shadow-md sticky top-0 left-0 w-full z-50">
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center">
                     <img src={sigmaLogo} alt="Sigma's logo" className="h-16" />

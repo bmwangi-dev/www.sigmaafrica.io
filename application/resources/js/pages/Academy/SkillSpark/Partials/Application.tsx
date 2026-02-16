@@ -7,7 +7,7 @@ import ApplicationSuccess from './ApplicationSuccess';
 
 const ApplicationSection = () => {
     const [submitted, setSubmitted] = useState(false);
-    const { data, setData, post, processing, errors } = useForm({
+    const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
         phone: '',
@@ -32,11 +32,12 @@ const ApplicationSection = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate successful submission for now
-        console.log('Form submitted', data);
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 1000); // Add a small delay to simulate network request
+        post('/skill-sparks/apply', {
+            onSuccess: () => {
+                reset();
+                setSubmitted(true);
+            },
+        });
     };
 
     const inputStyle = "w-full px-4 py-3 rounded-xl bg-gray-50 text-gray-900 border-[var(--color-migenta)] border-2 ring-0 outline-none focus:bg-white transition-all duration-200";
@@ -131,6 +132,9 @@ const ApplicationSection = () => {
                                                 <label className="text-sm font-bold text-gray-700 ml-1">Email *</label>
                                                 <input type="email" required placeholder="john@example.com" className={inputStyle}
                                                     value={data.email} onChange={e => setData('email', e.target.value)} />
+                                                {errors.email && (
+                                                    <Text as="p" size="xs" className="text-red-500 mt-1 ml-1">{errors.email}</Text>
+                                                )}
                                             </div>
                                         </div>
 
@@ -139,6 +143,9 @@ const ApplicationSection = () => {
                                                 <label className="text-sm font-bold text-gray-700 ml-1">Phone Number *</label>
                                                 <input type="tel" required placeholder="+254..." className={inputStyle}
                                                     value={data.phone} onChange={e => setData('phone', e.target.value)} />
+                                                {errors.phone && (
+                                                    <Text as="p" size="xs" className="text-red-500 mt-1 ml-1">{errors.phone}</Text>
+                                                )}
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-sm font-bold text-gray-700 ml-1">Organization</label>
@@ -203,9 +210,9 @@ const ApplicationSection = () => {
                                         </div>
                                     </div>
 
-                                    <button type="submit" disabled={true}
-                                        className="w-full bg-[var(--color-migenta)] text-white font-bold py-5 rounded-2xl shadow-xl opacity-50 cursor-not-allowed">
-                                        Submit Application (Closed)
+                                    <button type="submit" disabled={processing}
+                                        className="w-full bg-[var(--color-migenta)] text-white font-bold py-5 rounded-2xl shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+                                        {processing ? 'Submitting...' : 'Submit Application'}
                                     </button>
                                 </form>
                             </>

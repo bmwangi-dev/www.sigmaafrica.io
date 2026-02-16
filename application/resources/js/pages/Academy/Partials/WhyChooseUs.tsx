@@ -10,7 +10,7 @@ interface WhyChooseUsProps {
 
 const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
     return (
-        <section className="py-16 px-4 relative overflow-hidden">
+        <section className="mt-4 px-4 relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 opacity-20">
                 <svg viewBox="0 0 100 800" className="h-full">
                     <path
@@ -23,13 +23,6 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
             </div>
 
             <div className="container mx-auto relative z-10">
-                {/* Quote banner */}
-                <div className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto">
-                    <Text as="p" size="xl" weight="semibold">
-                        "Data Science Isn't A Skill, It's A Superpower!"
-                    </Text>
-                </div>
-
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Image Section */}
                     <div className="relative">

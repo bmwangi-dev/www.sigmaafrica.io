@@ -66,11 +66,10 @@ Vercel deploys the built application with:
 ## Current Configuration
 
 ### vercel.json (Now Correct)
-```json
 {
     "version": 2,
-    "buildCommand": "npm run build",
-    // ✅ NO installCommand - Vercel handles it automatically
+    // ❌ DO NOT add "buildCommand" here - it causes Vercel to misdetect the project type
+    // ✅ Use "vercel-build" scripts in package.json and composer.json instead
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.4",
@@ -209,6 +208,12 @@ You should now see:
 ## Troubleshooting
 
 If you still see errors:
+
+### Check Vercel Dashboard Overrides
+Go to **Settings > General > Build & Development Settings**:
+- **Install Command**: Ensure "INSTALL COMMAND" is **NOT** overridden with `composer install`. Set it to default (`npm install`) or turn off the override.
+- **Build Command**: Ensure it matches `npm run build` as per `vercel.json`.
+- **Root Directory**: Ensure this is set to `application`.
 
 ### Check Environment Variables
 Ensure these are set in Vercel Dashboard:

@@ -2,7 +2,8 @@ import React, { useState, FormEvent } from 'react';
 import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
-import { router } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
+import { toast } from 'react-toastify';
 import sigmaLogo from '../../../../../public/sigmaicon.png';
 
 interface ServiceContactFormProps {
@@ -10,15 +11,13 @@ interface ServiceContactFormProps {
 }
 
 const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => {
-    const [formData, setFormData] = useState({
+    const { data, setData, post, processing, reset, errors } = useForm({
         name: '',
         phone: '',
         email: '',
         service: '',
         message: '',
     });
-
-    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const services = [
         "Website Development",
@@ -31,15 +30,11 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsSubmitting(true);
 
-        router.post('/contact', formData, {
+        post('/services/consultation', {
             onSuccess: () => {
-                setFormData({ name: '', phone: '', email: '', service: '', message: '' });
-                setIsSubmitting(false);
-            },
-            onError: () => {
-                setIsSubmitting(false);
+                reset();
+                toast.success('Consultation request submitted successfully!');
             },
         });
     };
@@ -115,9 +110,9 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
                                         type="text"
                                         id="name"
                                         placeholder="Full Name"
-                                        value={formData.name}
+                                        value={data.name}
                                         onChange={(e) =>
-                                            setFormData({ ...formData, name: e.target.value })
+                                            setData('name', e.target.value)
                                         }
                                         className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         required
@@ -134,9 +129,9 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
                                         type="tel"
                                         id="phone"
                                         placeholder="Phone Number"
-                                        value={formData.phone}
+                                        value={data.phone}
                                         onChange={(e) =>
-                                            setFormData({ ...formData, phone: e.target.value })
+                                            setData('phone', e.target.value)
                                         }
                                         className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         required
@@ -153,9 +148,9 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
                                         type="email"
                                         id="email"
                                         placeholder="Email Address"
-                                        value={formData.email}
+                                        value={data.email}
                                         onChange={(e) =>
-                                            setFormData({ ...formData, email: e.target.value })
+                                            setData('email', e.target.value)
                                         }
                                         className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
                                         required
@@ -170,9 +165,9 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
                                     </label>
                                     <select
                                         id="service"
-                                        value={formData.service}
+                                        value={data.service}
                                         onChange={(e) =>
-                                            setFormData({ ...formData, service: e.target.value })
+                                            setData('service', e.target.value)
                                         }
                                         className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none h-[48px]"
                                         required
@@ -196,9 +191,9 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
                                 <textarea
                                     id="message"
                                     placeholder="Tell us about your project or consultation needs..."
-                                    value={formData.message}
+                                    value={data.message}
                                     onChange={(e) =>
-                                        setFormData({ ...formData, message: e.target.value })
+                                        setData('message', e.target.value)
                                     }
                                     rows={5}
                                     className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none resize-none"
@@ -208,10 +203,10 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
 
                             <PrimaryButton
                                 type="submit"
-                                disabled={isSubmitting}
+                                loading={processing}
                                 className="w-full bg-[var(--color-migenta)] text-white px-8 py-4 rounded-md font-semibold hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {isSubmitting ? 'Submitting...' : 'Request Consultation'}
+                                {processing ? 'Submitting...' : 'Request Consultation'}
                             </PrimaryButton>
                         </form>
                     </div>

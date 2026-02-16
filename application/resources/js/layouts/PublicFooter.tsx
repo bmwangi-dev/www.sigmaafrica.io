@@ -1,9 +1,32 @@
+import { toast } from 'react-toastify';
+import { useForm } from '@inertiajs/react';
 import { Mail, Phone, Globe } from 'lucide-react';
 import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 
 export default function PublicFooter() {
+    const { data, setData, post, processing, reset, errors } = useForm({
+        email: '',
+    });
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        post('/newsletter/subscribe', {
+            onSuccess: () => {
+                reset();
+                toast.success('Thank you for subscribing!');
+            },
+            onError: (err) => {
+                if (err.email) {
+                    toast.error(err.email);
+                } else {
+                    toast.error('Something went wrong. Please try again.');
+                }
+            },
+        });
+    };
+
     return (
         <footer className="bg-[var(--color-primary)] text-white py-4 text-sm px-4 md:px-4 rounded-t-3xl mt-4">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -21,15 +44,22 @@ export default function PublicFooter() {
                     <div className="hidden md:block">
                         <Heading level={3} size="xl" weight="bold" className="font-bold text-base mb-2">Latest News</Heading>
                         <Text as="p" size="sm" weight="normal" className="mb-4">Subscribe to get the latest news delivered to your inbox.</Text>
-                        <form className="flex flex-col sm:flex-row items-stretch gap-2 bg-[var(--color-secondary)] p-2 rounded-md">
+                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch gap-2 bg-[var(--color-secondary)] p-2 rounded-xl">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
                                 aria-label="Email"
-                                className="px-3 text-[var(--color-content)] sm:w-auto flex-grow"
+                                required
+                                value={data.email}
+                                onChange={(e) => setData('email', e.target.value)}
+                                className="px-4 py-2 text-[var(--color-content)] bg-white rounded-lg sm:w-auto flex-grow outline-none focus:ring-2 focus:ring-[var(--color-migenta)] transition-all"
                             />
-                            <PrimaryButton disabled={true} className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-md font-semibold opacity-50 cursor-not-allowed">
-                                Contact Us (Closed)
+                            <PrimaryButton
+                                type="submit"
+                                loading={processing}
+                                className="bg-[var(--color-migenta)] text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+                            >
+                                {processing ? 'Subscribing...' : 'Subscribe'}
                             </PrimaryButton>
                         </form>
                     </div>
