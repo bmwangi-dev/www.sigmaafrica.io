@@ -30,7 +30,7 @@
 .gitattributes
 .gitignore
 
-# Development tools
+# Development tools & documentation
 .phpunit.result.cache
 .styleci.yml
 .php_cs
@@ -41,11 +41,21 @@ docker-compose.yml
 phpunit.xml
 webpack.mix.js
 *.log
+*.md
 
-# Markdown documentation (optional - remove if you want to include them)
-# README.md
-# *.md
+# Large raw assets not needed in PHP function
+/resources/js
+/resources/css
+/database/factories
+/database/seeders
 
-# DO NOT IGNORE - These are needed for deployment
-#!/public/build
-#!/vendor
+# Aggressive Vendor cleaning
+vendor/**/tests
+vendor/**/docs
+vendor/**/examples
+vendor/**/phpunit.*
+vendor/**/*.md
+vendor/**/*.txt
+vendor/**/CHANGELOG*
+vendor/**/CONTRIBUTING*
+vendor/**/LICENSE*
