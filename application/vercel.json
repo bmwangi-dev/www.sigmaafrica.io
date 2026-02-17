@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "outputDirectory": null,
+    "outputDirectory": "public/build",
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.4",
@@ -32,6 +32,8 @@
         }
     ],
     "env": {
+        "APP_NAME": "Sigma Africa Accelerate",
+        "APP_DEBUG": "false",
         "APP_ENV": "production",
         "APP_SERVICES_CACHE": "/tmp/bootstrap/cache/services.php",
         "APP_PACKAGES_CACHE": "/tmp/bootstrap/cache/packages.php",
