@@ -48,6 +48,10 @@ webpack.mix.js
 /resources/css
 /database/factories
 /database/seeders
+/database/migrations
+/app/Models
+/app/Console
+/app/Providers/BroadcastServiceProvider.php
 
 # Aggressive Vendor cleaning
 vendor/**/tests
@@ -59,3 +63,9 @@ vendor/**/*.txt
 vendor/**/CHANGELOG*
 vendor/**/CONTRIBUTING*
 vendor/**/LICENSE*
+
+# Aggressively ignore other Google Services (failsafe)
+# This ignores every service folder EXCEPT Sheets
+vendor/google/apiclient-services/src/Google/Service/[!S]*
+vendor/google/apiclient-services/src/Google/Service/S[!h]*
+vendor/google/apiclient-services/src/Google/Service/Sh[!e]*
