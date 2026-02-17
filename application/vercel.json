@@ -1,5 +1,8 @@
 {
     "version": 2,
+    "buildCommand": "npm run build",
+    "outputDirectory": "public",
+    "framework": null,
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.4",
@@ -31,6 +34,7 @@
         }
     ],
     "env": {
+        "APP_KEY": "base64:7oPH5EhgJsO01DObdiUsyyeRLoeoosIpMd4cJx3899Y=",
         "APP_NAME": "Sigma Africa Accelerate",
         "APP_DEBUG": "false",
         "APP_ENV": "production",
