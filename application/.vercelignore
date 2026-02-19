@@ -57,15 +57,36 @@ webpack.mix.js
 vendor/**/tests
 vendor/**/docs
 vendor/**/examples
+vendor/**/unit-tests
 vendor/**/phpunit.*
 vendor/**/*.md
 vendor/**/*.txt
 vendor/**/CHANGELOG*
 vendor/**/CONTRIBUTING*
 vendor/**/LICENSE*
+vendor/**/composer.json
+vendor/**/composer.lock
+vendor/**/.gitignore
+vendor/**/.travis.yml
+vendor/**/phpunit.xml.dist
 
-# Aggressively ignore other Google Services (failsafe)
+# Aggressively ignore Google Services (correct path)
 # This ignores every service folder EXCEPT Sheets
-vendor/google/apiclient-services/src/Google/Service/[!S]*
-vendor/google/apiclient-services/src/Google/Service/S[!h]*
-vendor/google/apiclient-services/src/Google/Service/Sh[!e]*
+vendor/google/apiclient-services/src/[!S]*
+vendor/google/apiclient-services/src/S[!h]*
+vendor/google/apiclient-services/src/Sh[!e]*
+vendor/google/apiclient-services/src/She[!e]*
+vendor/google/apiclient-services/src/Shee[!t]*
+vendor/google/apiclient-services/src/Sheet[!s]*
+
+# Also ignore the service class files themselves if they aren't Sheets
+vendor/google/apiclient-services/src/[!S]*.php
+vendor/google/apiclient-services/src/S[!h]*.php
+vendor/google/apiclient-services/src/Sh[!e]*.php
+vendor/google/apiclient-services/src/She[!e]*.php
+vendor/google/apiclient-services/src/Shee[!t]*.php
+vendor/google/apiclient-services/src/Sheet[!s]*.php
+
+# Explicitly KEEP Sheets
+!vendor/google/apiclient-services/src/Sheets/
+!vendor/google/apiclient-services/src/Sheets.php
