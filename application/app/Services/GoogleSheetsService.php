@@ -16,10 +16,18 @@ class GoogleSheetsService
         $this->client->setApplicationName('Sigma Africa Accelerate');
         $this->client->setScopes([Google_Service_Sheets::SPREADSHEETS]);
         
-        $credentialsPath = config('services.google.credentials_path');
+        // Try JSON credentials from env first (for Vercel/serverless)
+        $credentialsJson = config('services.google.credentials_json');
         
-        if ($credentialsPath) {
-            $this->client->setAuthConfig(storage_path('app/' . $credentialsPath));
+        if ($credentialsJson) {
+            $credentials = json_decode($credentialsJson, true);
+            $this->client->setAuthConfig($credentials);
+        } else {
+            // Fall back to file path (for local development)
+            $credentialsPath = config('services.google.credentials_path');
+            if ($credentialsPath && file_exists(storage_path('app/' . $credentialsPath))) {
+                $this->client->setAuthConfig(storage_path('app/' . $credentialsPath));
+            }
         }
         
         $this->client->setAccessType('offline');

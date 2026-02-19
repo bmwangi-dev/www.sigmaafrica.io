@@ -37,6 +37,7 @@ return [
 
     'google' => [
         'credentials_path' => env('GOOGLE_SHEETS_CREDENTIALS_PATH'),
+        'credentials_json' => env('GOOGLE_SHEETS_CREDENTIALS_JSON'),
         'spreadsheet_id' => env('GOOGLE_SHEETS_SPREADSHEET_ID'),
     ],
 
