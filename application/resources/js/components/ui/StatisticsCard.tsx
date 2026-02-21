@@ -48,14 +48,14 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({
                                 className="bg-white shadow-md rounded-xl border border-gray-100 p-4 text-center hover:bg-[var(--color-migenta)] hover:shadow-lg transition-transform transform hover:scale-105"
                             >
                                 <CardHeader className="pb-2">
-                                    <CardTitle className="text-sm font-semibold text-[var(--color-sigma-blue)]">
+                                    <Text size="sm" weight="semibold" className="text-[var(--color-sigma-blue)]">
                                         {stat.title}
-                                    </CardTitle>
+                                    </Text>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="text-3xl font-bold text-[var(--color-primary)]">
+                                    <Heading level={2} size="3xl" weight="bold" className="text-[var(--color-primary)]">
                                         {stat.value}
-                                    </div>
+                                    </Heading>
                                 </CardContent>
                             </Card>
                         );

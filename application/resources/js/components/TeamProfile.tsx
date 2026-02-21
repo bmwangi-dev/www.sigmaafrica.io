@@ -1,6 +1,8 @@
 import React from 'react';
 import { SocialIcon } from '@/components/ui/SocialIcons';
 import type { TeamData } from '../types/Team';
+import Heading from './Typography/Heading';
+import Text from './Typography/Text';
 
 interface TeamProfileProps {
     member: TeamData;
@@ -27,21 +29,21 @@ const TeamProfile: React.FC<TeamProfileProps> = ({
                     className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-gray-200 hover:border-[var(--color-migenta)] transition-colors duration-300"
                 />
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-[var(--color-migenta)] text-white text-xs px-3 py-1 rounded-full font-semibold">
+                    <Text as="span" size="xs" weight="semibold" className="bg-[var(--color-migenta)] text-white px-3 py-1 rounded-full whitespace-nowrap">
                         {member.department}
-                    </span>
+                    </Text>
                 </div>
             </div>
 
             <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-800 mb-1">
+                <Heading level={3} size="xl" weight="bold" className="text-gray-800 mb-1">
                     {member.name}
-                </h3>
+                </Heading>
 
                 {member.position && (
-                    <p className="text-gray-600 font-medium mb-2">
+                    <Text size="base" weight="medium" className="text-gray-600 mb-2">
                         {member.position}
-                    </p>
+                    </Text>
                 )}
                 {member.socials && member.socials.length > 0 && (
                     <div className="flex justify-center space-x-3 text-lg">

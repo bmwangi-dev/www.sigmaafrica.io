@@ -9,21 +9,21 @@ export default function Index() {
             category: "Career Insights",
             title: <>Top <span className="text-[var(--color-migenta)]">5 Skills</span> to Master by <span className="text-[var(--color-migenta)]">2025</span></>,
             description: "As industries evolve, these five skills will keep you ahead of the curve. Master them to secure your future in the tech landscape.",
-            image: "/academy-student.png",
+            image: "/images/academy_student.png",
             link: "#"
         },
         {
             category: "Data Science",
             title: <>The Future of <span className="text-[var(--color-migenta)]">Big Data</span> in <span className="text-[var(--color-migenta)]">Africa</span></>,
             description: "Explore how data analytics is transforming businesses and governance across the continent. Join the revolution today.",
-            image: "/datascience.png",
+            image: "/images/about_sigma.png",
             link: "#"
         },
         {
             category: "Artificial Intelligence",
             title: <>Demystifying <span className="text-[var(--color-migenta)]">AI</span> for <span className="text-[var(--color-migenta)]">Beginners</span></>,
             description: "Artificial Intelligence is not just for experts. Learn the basics and how you can apply AI tools in your daily work.",
-            image: "/ai.jpeg",
+            image: "/images/study_with_us.png",
             link: "#"
         }
     ];

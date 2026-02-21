@@ -125,16 +125,17 @@ const Testimonials: React.FC = () => {
                                             </Text>
 
                                             <div className="flex items-center pt-4 border-t border-gray-100">
-                                                <div className="relative">                                <Avatar
-                                                    name={testimonial.name}
-                                                    image={testimonial.image}
-                                                />
+                                                <div className="relative">
+                                                    <Avatar
+                                                        name={testimonial.name}
+                                                        image={testimonial.image}
+                                                    />
                                                 </div>
                                                 <div>
-                                                    <Text weight="bold" className="text-gray-800 text-lg">
+                                                    <Text size="lg" weight="bold" className="text-gray-800">
                                                         {testimonial.name}
                                                     </Text>
-                                                    <Text size="sm" className="text-[var(--color-primary)] font-medium">
+                                                    <Text size="sm" weight="medium" className="text-[var(--color-primary)]">
                                                         {testimonial.role}
                                                     </Text>
                                                 </div>

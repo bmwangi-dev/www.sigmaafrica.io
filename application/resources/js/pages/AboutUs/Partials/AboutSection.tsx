@@ -25,7 +25,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                                 className="w-full h-[400px] object-cover"
                             />
                         </div>
-                        {/* Decorative element consistent with other pages */}
                         <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[var(--color-migenta)] rounded-2xl -z-10 opacity-20 transform rotate-12"></div>
                     </div>
 

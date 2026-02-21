@@ -39,7 +39,7 @@ const Text: React.FC<TextProps> = ({ size, weight = 'normal', children, classNam
     };
 
     const sizeClass = size ? sizes[size] : '';
-    const classes = `${sizeClass} ${weights[weight]} ${className}`.trim();
+    const classes = `font-sans ${sizeClass} ${weights[weight]} ${className}`.trim();
 
     return (
         <Tag className={classes} {...props}>

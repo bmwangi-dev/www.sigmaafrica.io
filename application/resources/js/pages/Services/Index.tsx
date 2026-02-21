@@ -6,8 +6,8 @@ import Text from '@/components/Typography/Text';
 import { CheckCircle2, Globe, Layout, Search, Megaphone, TrendingUp, Briefcase } from 'lucide-react';
 import { Header } from '@/components/ui/Header';
 
-import studentImg from '../../../../public/academy-student.png';
-import dsImg from '../../../../public/datascience.png';
+import studentImg from '../../../../public/images/services_team.png';
+import dsImg from '../../../../public/images/about_sigma.png';
 
 export default function Index() {
     const servicesList = [
@@ -82,12 +82,12 @@ export default function Index() {
                                 </Heading>
                             </div>
 
-                            <div className="bg-[var(--color-primary)] p-8 rounded-3xl border border-gray-100">
+                            <div className="bg-[var(--color-primary)] p-8 rounded-3xl border border-gray-100 shadow-lg">
                                 <ul className="space-y-4">
                                     {servicesList.map((service, index) => (
                                         <li key={index} className="flex items-center gap-3">
                                             <CheckCircle2 className="w-5 h-5 text-[var(--color-migenta)] flex-shrink-0" />
-                                            <Text size="lg" weight="medium" className="text-gray-300">
+                                            <Text size="lg" weight="medium" className="text-white">
                                                 {service}
                                             </Text>
                                         </li>
@@ -110,14 +110,14 @@ export default function Index() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {serviceCards.map((card, index) => (
-                            <div key={index} className="bg-gray-800 text-white p-8 rounded-2xl border-2 border-transparent hover:border-[var(--color-migenta)] transition-all duration-300 group">
+                            <div key={index} className="bg-white text-[var(--color-sigma-blue)] p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[var(--color-migenta)] transition-all duration-300 group">
                                 <div className="mb-6">
                                     <card.icon className="w-8 h-8 text-[var(--color-migenta)]" />
                                 </div>
-                                <Heading level={3} size="xl" weight="bold" className="mb-4 text-white">
+                                <Heading level={3} size="xl" weight="bold" className="mb-4 text-[var(--color-sigma-blue)]">
                                     {card.title}
                                 </Heading>
-                                <Text size="base" className="text-gray-300 leading-relaxed">
+                                <Text as="p" size="base" className="text-gray-600 leading-relaxed">
                                     {card.description}
                                 </Text>
                                 <div className="mt-4 pt-4 border-t border-[var(--color-migenta)] w-16"></div>

@@ -40,7 +40,7 @@ const Heading: React.FC<HeadingProps> = ({ level = 1, size, weight = 'semibold',
     };
 
     const sizeClass = size ? sizes[size] : '';
-    const classes = `${sizeClass} ${weights[weight]} ${className}`.trim();
+    const classes = `font-sans ${sizeClass} ${weights[weight]} ${className}`.trim();
 
     return (
         <Tag className={classes} {...props}>

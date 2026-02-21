@@ -1,4 +1,6 @@
 import React from "react";
+import Heading from "@/components/Typography/Heading";
+import Text from "@/components/Typography/Text";
 
 const partners = [
     { name: "JKUAT", logo: "/jkuat.png" },
@@ -11,12 +13,14 @@ const OurPartners: React.FC = () => {
     return (
         <section className="py-12">
             <div className="max-w-6xl mx-auto text-center px-6">
-                <h2 className="bg-[var(--color-migenta)] text-white py-4 px-8 rounded-lg mb-12 text-center max-w-2xl mx-auto text-3xl font-bold">
-                    Our Partners
-                </h2>
-                <p className="text-lg text-gray-600 mb-10">
+                <div className="bg-[var(--color-migenta)] py-4 px-8 rounded-lg mb-12 max-w-2xl mx-auto shadow-md">
+                    <Heading level={2} size="3xl" weight="bold" className="text-white text-center">
+                        Our Partners
+                    </Heading>
+                </div>
+                <Text size="lg" className="text-gray-600 mb-10">
                     Collaborating for a brighter future.
-                </p>
+                </Text>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {partners.map((partner, idx) => (
@@ -35,9 +39,9 @@ const OurPartners: React.FC = () => {
                                     height: "100px",
                                 }}
                             />
-                            <h5 className="text-lg font-semibold text-gray-800">
+                            <Heading level={5} size="lg" weight="semibold" className="text-gray-800">
                                 {partner.name}
-                            </h5>
+                            </Heading>
                         </div>
                     ))}
                 </div>

@@ -30,8 +30,8 @@ function Index({ activeCohort }: IndexProps) {
                         Sigma Africa <span className="text-[var(--color-migenta)]">SkillSpark</span>
                     </>
                 }
-                subheading="6-Week Intensive Data Science Bootcamp"
-                description="SkillSpark is a 6-week intensive data science bootcamp designed to transform beginners into job-ready data professionals. Through hands-on projects, expert mentorship, and real-world case studies, you'll master data analysis, machine learning, and business intelligence."
+                subheading="9-Week Intensive Data Science Bootcamp"
+                description="SkillSpark is a 9-week intensive data science bootcamp designed to transform beginners into job-ready data professionals. Through hands-on projects, expert mentorship, and real-world case studies, you'll master data analysis, machine learning, and business intelligence."
                 className={{ background: "linear-gradient(90deg, #0a2540, #06659b)" }}
                 textColor="text-white"
                 showStatistics={false}

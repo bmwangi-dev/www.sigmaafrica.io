@@ -107,10 +107,13 @@ class ContactController extends Controller
                 $existingData = $this->googleSheets->getValues($spreadsheetId, 'NEWSLETTER!A:A');
                 
                 if (!empty($existingData)) {
+                    $targetEmail = strtolower(trim($validated['email']));
                     foreach ($existingData as $row) {
-                        $existingEmail = $row[0] ?? '';
-                        if (strtolower($existingEmail) === strtolower($validated['email'])) {
-                            return back()->withErrors(['email' => 'This email is already subscribed!']);
+                        $existingEmail = strtolower(trim($row[0] ?? ''));
+                        if ($existingEmail === $targetEmail) {
+                            throw \Illuminate\Validation\ValidationException::withMessages([
+                                'email' => 'This email is already subscribed!'
+                            ]);
                         }
                     }
                 }
@@ -124,6 +127,8 @@ class ContactController extends Controller
             }
 
             return back()->with('success', 'Thank you for subscribing to our newsletter!');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
         } catch (\Exception $e) {
             Log::error('Newsletter Subscription Error: ' . $e->getMessage());
             return back()->with('error', 'There was an error subscribing. Please try again.');

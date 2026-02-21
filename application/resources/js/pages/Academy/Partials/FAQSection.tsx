@@ -89,9 +89,9 @@ const FAQSection: React.FC<FAQSectionProps> = ({ imageSrc }) => {
                         </div>
 
                         <div>
-                            <Heading level={2} size="5xl" weight="bold" className="text-gray-900 leading-tight mb-4">
+                            <Heading level={2} size="5xl" weight="bold" className="text-[var(--color-sigma-blue)] leading-tight mb-4">
                                 Frequently Asked <br />
-                                <span className="text-[var(--color-migenta)] text-6xl">Questions</span>
+                                <span className="text-[var(--color-migenta)]">Questions</span>
                             </Heading>
                             <Text as="p" size="xl" className="text-gray-600 max-w-lg">
                                 Everything you need to know about our data science programs, curriculum, and community.
@@ -104,10 +104,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({ imageSrc }) => {
                                     <div className="w-12 h-12 rounded-xl bg-[var(--color-migenta)]/10 flex items-center justify-center text-[var(--color-migenta)] mb-4">
                                         {stat.icon}
                                     </div>
-                                    <Heading level={3} size="2xl" weight="bold" className="text-gray-900 mb-1">
+                                    <Heading level={3} size="2xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-1">
                                         {stat.value}
                                     </Heading>
-                                    <Text size="sm" className="text-gray-500 font-medium">
+                                    <Text size="sm" weight="medium" className="text-gray-600">
                                         {stat.label}
                                     </Text>
                                 </div>

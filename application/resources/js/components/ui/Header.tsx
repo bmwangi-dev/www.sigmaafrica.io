@@ -27,9 +27,9 @@ export const Header = ({
     description = '',
     className = {},
     containerClass = "container mx-auto px-4 sm:px-6 lg:px-8 text-center w-full",
-    headingClass = "text-3xl sm:text-4xl md:text-5xl font-bold",
-    subheadingClass = 'text-lg sm:text-xl mt-2',
-    descriptionClass = "text-sm sm:text-base mt-2",
+    headingClass = "",
+    subheadingClass = 'mt-2',
+    descriptionClass = "mt-2",
     children = null,
     backgroundGradient = "linear-gradient(90deg, #0a2540, #06659b)",
     textColor = "text-white",
@@ -51,7 +51,7 @@ export const Header = ({
             >
                 <Heading
                     level={1}
-                    size="3xl"
+                    size="5xl"
                     weight="bold"
                     className={headingClass}
                 >
@@ -61,7 +61,7 @@ export const Header = ({
                 {subheading && (
                     <Heading
                         level={2}
-                        size="lg"
+                        size="xl"
                         weight="semibold"
                         className={subheadingClass}
                     >
@@ -72,8 +72,7 @@ export const Header = ({
                 {description && (
                     <Text
                         as="p"
-                        size="lg"
-                        weight="thin"
+                        size="base"
                         className={descriptionClass}
                     >
                         {description}

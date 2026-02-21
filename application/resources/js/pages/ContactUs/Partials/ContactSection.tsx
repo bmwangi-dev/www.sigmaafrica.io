@@ -4,9 +4,11 @@ import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 import { Phone, Mail, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import FormSuccess from '@/components/ui/FormSuccess';
 import { toast } from 'react-toastify';
 
 const ContactSection = () => {
+    const [submitted, setSubmitted] = React.useState(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
@@ -20,6 +22,7 @@ const ContactSection = () => {
         post('/contact', {
             onSuccess: () => {
                 reset();
+                setSubmitted(true);
                 toast.success('Message sent successfully!');
             },
         });
@@ -87,88 +90,117 @@ const ContactSection = () => {
                     </div>
 
                     {/* Right Column - Form */}
-                    <div>
-                        <Heading level={3} size="3xl" weight="bold" className="mb-8">Fill Up The Form</Heading>
+                    <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 min-h-[500px] flex flex-col justify-center">
+                        {submitted ? (
+                            <FormSuccess
+                                title="Message Received!"
+                                message="Thank you for reaching out to Sigma Africa. We have received your details and will get back to you shortly."
+                                steps={[
+                                    "Our team will review your inquiry.",
+                                    "We'll reach out via email or phone to discuss further.",
+                                    "We'll explore how we can best support your data goals."
+                                ]}
+                            />
+                        ) : (
+                            <>
+                                <Heading level={3} size="3xl" weight="bold" className="mb-8">Fill Up The Form</Heading>
 
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* Name */}
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-bold mb-2">Name</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        placeholder="Name"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        value={data.name}
-                                        onChange={e => setData('name', e.target.value)}
-                                    />
-                                </div>
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {/* Name */}
+                                        <div>
+                                            <label htmlFor="name" className="block text-sm font-bold mb-2">Name</label>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Name"
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none focus:bg-white transition-all"
+                                                value={data.name}
+                                                onChange={e => setData('name', e.target.value)}
+                                            />
+                                            {errors.name && <Text size="xs" className="text-red-500 mt-1">{errors.name}</Text>}
+                                        </div>
 
-                                {/* Email */}
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-bold mb-2">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        placeholder="Email"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        value={data.email}
-                                        onChange={e => setData('email', e.target.value)}
-                                    />
-                                </div>
-                            </div>
+                                        {/* Email */}
+                                        <div>
+                                            <label htmlFor="email" className="block text-sm font-bold mb-2">Email</label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none focus:bg-white transition-all"
+                                                value={data.email}
+                                                onChange={e => setData('email', e.target.value)}
+                                            />
+                                            {errors.email && <Text size="xs" className="text-red-500 mt-1">{errors.email}</Text>}
+                                        </div>
+                                    </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* Phone Number */}
-                                <div>
-                                    <label htmlFor="phone" className="block text-sm font-bold mb-2">Phone Number</label>
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        placeholder="Your Number"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        value={data.phone}
-                                        onChange={e => setData('phone', e.target.value)}
-                                    />
-                                </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {/* Phone Number */}
+                                        <div>
+                                            <label htmlFor="phone" className="block text-sm font-bold mb-2">Phone Number</label>
+                                            <input
+                                                type="tel"
+                                                id="phone"
+                                                name="phone"
+                                                placeholder="Your Number"
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none focus:bg-white transition-all"
+                                                value={data.phone}
+                                                onChange={e => setData('phone', e.target.value)}
+                                            />
+                                            {errors.phone && <Text size="xs" className="text-red-500 mt-1">{errors.phone}</Text>}
+                                        </div>
 
-                                {/* Subject */}
-                                <div>
-                                    <label htmlFor="subject" className="block text-sm font-bold mb-2">Subject</label>
-                                    <input
-                                        type="text"
-                                        id="subject"
-                                        placeholder="Your Subject"
-                                        className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        value={data.subject}
-                                        onChange={e => setData('subject', e.target.value)}
-                                    />
-                                </div>
-                            </div>
+                                        {/* Subject */}
+                                        <div>
+                                            <label htmlFor="subject" className="block text-sm font-bold mb-2">Subject</label>
+                                            <input
+                                                type="text"
+                                                id="subject"
+                                                name="subject"
+                                                placeholder="Your Subject"
+                                                required
+                                                className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none focus:bg-white transition-all"
+                                                value={data.subject}
+                                                onChange={e => setData('subject', e.target.value)}
+                                            />
+                                            {errors.subject && <Text size="xs" className="text-red-500 mt-1">{errors.subject}</Text>}
+                                        </div>
+                                    </div>
 
-                            {/* Message */}
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-bold mb-2">Message</label>
-                                <textarea
-                                    id="message"
-                                    rows={6}
-                                    placeholder="Message"
-                                    className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none resize-none"
-                                    value={data.message}
-                                    onChange={e => setData('message', e.target.value)}
-                                ></textarea>
-                            </div>
+                                    {/* Message */}
+                                    <div>
+                                        <label htmlFor="message" className="block text-sm font-bold mb-2">Message</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows={6}
+                                            placeholder="Message"
+                                            required
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none focus:bg-white transition-all resize-none"
+                                            value={data.message}
+                                            onChange={e => setData('message', e.target.value)}
+                                        ></textarea>
+                                        {errors.message && <Text size="xs" className="text-red-500 mt-1">{errors.message}</Text>}
+                                    </div>
 
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                disabled={processing}
-                                className="w-full bg-[var(--color-migenta)] text-white font-bold py-4 rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
-                            >
-                                {processing ? 'Submitting...' : 'Submit Now'}
-                            </button>
-                        </form>
+                                    {/* Submit Button */}
+                                    <PrimaryButton
+                                        type="submit"
+                                        disabled={processing}
+                                        className="w-full bg-[var(--color-migenta)] text-white font-bold py-4 rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
+                                    >
+                                        {processing ? 'Submitting...' : 'Submit Now'}
+                                    </PrimaryButton>
+                                </form>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

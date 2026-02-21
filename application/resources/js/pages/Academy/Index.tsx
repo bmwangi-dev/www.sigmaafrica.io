@@ -5,9 +5,9 @@ import LearningJourney from "./Partials/LearningJourney";
 import WhyChooseUs from "./Partials/WhyChooseUs";
 import WorkProcess from "./Partials/WorkProcess";
 import FAQSection from "./Partials/FAQSection";
-import studentImage from "../../../../public/academy-student.png";
-import groupImage from "../../../../public/academy-group.png";
-import trainersImage from "../../../../public/academy-trainers.png";
+import studentImage from "../../../../public/images/academy_student.png";
+import groupImage from "../../../../public/images/academy_group.png";
+import trainersImage from "../../../../public/images/academy_trainers.png";
 
 function Index() {
     return (

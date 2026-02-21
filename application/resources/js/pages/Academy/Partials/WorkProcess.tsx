@@ -31,7 +31,6 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
 
     return (
         <section className="py-16 px-4 relative overflow-hidden">
-            {/* Decorative curved lines */}
             <div className="absolute left-0 top-0 bottom-0 w-32 opacity-20">
                 <svg viewBox="0 0 100 800" className="h-full">
                     <path
@@ -45,34 +44,30 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
 
             <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    {/* Process Steps */}
                     <div className="">
-                        <Heading level={2} size="4xl" weight="bold" className="mb-4">
+                        <Heading level={2} size="4xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-4">
                             Our Work Process
                         </Heading>
-                        <Text as="p" size="base" weight="normal" className="mb-8">
+                        <Text as="p" size="base" weight="normal" className="mb-8 text-gray-600">
                             Joining Sigma Africa Academy is quick and easy! Follow these three simple steps to gain hands-on skills and expert mentorship.
                         </Text>
 
                         <div className="space-y-6">
                             {steps.map((step, index) => (
                                 <div key={index} className="relative flex gap-4">
-                                    {/* Vertical Line */}
                                     {index < steps.length - 1 && (
                                         <div className="absolute left-4 top-12 bottom-0 w-0.5 border-l-2 border-dashed border-gray-600"></div>
                                     )}
 
-                                    {/* Icon */}
                                     <div className="flex-shrink-0 w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center relative z-10">
                                         {step.icon}
                                     </div>
 
-                                    {/* Content */}
                                     <div>
-                                        <Heading level={3} size="xl" weight="bold" className="mb-2">
+                                        <Heading level={3} size="xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-2">
                                             Step {step.number}: {step.title}
                                         </Heading>
-                                        <Text as="p" size="base" weight="normal" className="">
+                                        <Text as="p" size="base" weight="normal" className="text-gray-600">
                                             {step.description}
                                         </Text>
                                     </div>
@@ -81,9 +76,7 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
                         </div>
                     </div>
 
-                    {/* Images Grid */}
                     <div className="grid grid-cols-2 gap-4">
-                        {/* Large image spanning 2 rows */}
                         <div className="col-span-2 rounded-lg overflow-hidden shadow-lg">
                             <img
                                 src={images[0] || '/placeholder-group.jpg'}
@@ -96,7 +89,6 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
                             />
                         </div>
 
-                        {/* Two smaller images */}
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <img
                                 src={images[1] || '/placeholder-classroom.jpg'}

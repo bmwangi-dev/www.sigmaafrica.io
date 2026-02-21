@@ -1,8 +1,10 @@
-import StudyWithUsImage from '../../../../../public/ai.jpeg'
+import StudyWithUsImage from '../../../../../public/images/study_with_us.png'
 import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 import { BookOpen, Users, Laptop, Award, PhoneCall } from 'lucide-react';
+
+import { Link } from '@inertiajs/react';
 
 const WhyStudyWithUs = () => {
     const benefits = [
@@ -56,7 +58,7 @@ const WhyStudyWithUs = () => {
                                         <Heading level={3} size="xl" weight="semibold" className="text-[var(--color-sigma-blue)] mb-2">
                                             {benefit.title}
                                         </Heading>
-                                        <Text as="p" size="base" weight="normal" className="text-gray-600 leading-relaxed">
+                                        <Text as="p" size="base" className="text-gray-600 leading-relaxed">
                                             {benefit.description}
                                         </Text>
                                     </div>
@@ -88,9 +90,11 @@ const WhyStudyWithUs = () => {
                                 <Text as="p" size="base" weight="normal" className="text-gray-300 mb-6">
                                     Ready to take your skills to the next level? Reach out to us today and let’s get started!
                                 </Text>
-                                <PrimaryButton disabled={true} className="w-full bg-white/10 hover:bg-white/20 border-2 border-white/20 text-white px-6 py-3 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-                                    Enrollment Closed
-                                </PrimaryButton>
+                                <Link href="/services#consult" className="w-full">
+                                    <PrimaryButton className="w-full bg-[var(--color-migenta)] hover:bg-opacity-90 text-white px-6 py-3 rounded-xl font-bold transition-all">
+                                        Inquire Now
+                                    </PrimaryButton>
+                                </Link>
                             </div>
                         </div>
                     </div>

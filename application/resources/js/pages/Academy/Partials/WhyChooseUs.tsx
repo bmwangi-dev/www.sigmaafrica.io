@@ -24,7 +24,6 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
 
             <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Image Section */}
                     <div className="relative">
                         <div className="overflow-hidden rounded-lg shadow-2xl">
                             <img
@@ -39,9 +38,8 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                         </div>
                     </div>
 
-                    {/* Content Section */}
                     <div className="">
-                        <Heading level={2} size="4xl" weight="bold" className="mb-6">
+                        <Heading level={2} size="4xl" weight="bold" className="text-[var(--color-sigma-blue)] mb-6">
                             Why Choose Us?
                         </Heading>
 
@@ -52,7 +50,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                                     <Text as="strong" size="lg" weight="semibold" className="block mb-1">
                                         Expert-Led Training:
                                     </Text>
-                                    <Text as="p" size="base" weight="normal" className="">
+                                    <Text as="p" size="base" weight="normal" className="text-gray-600">
                                         Learn from seasoned professionals shaping the future of data science.
                                     </Text>
                                 </div>
@@ -64,7 +62,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                                     <Text as="strong" size="lg" weight="semibold" className="block mb-1">
                                         Real-World Skills:
                                     </Text>
-                                    <Text as="p" size="base" weight="normal" className="">
+                                    <Text as="p" size="base" weight="normal" className="text-gray-600">
                                         Gain hands-on experience with tools and techniques used by top players in the industry.
                                     </Text>
                                 </div>
@@ -76,7 +74,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                                     <Text as="strong" size="lg" weight="semibold" className="block mb-1">
                                         Career-Boosting Mentorship:
                                     </Text>
-                                    <Text as="p" size="base" weight="normal" className="">
+                                    <Text as="p" size="base" weight="normal" className="text-gray-600">
                                         Get personal guidance from the best of the best.
                                     </Text>
                                 </div>

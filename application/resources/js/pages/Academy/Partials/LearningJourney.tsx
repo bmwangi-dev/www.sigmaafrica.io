@@ -52,7 +52,7 @@ const LearningJourney: React.FC = () => {
                     level={2}
                     size="4xl"
                     weight="bold"
-                    className="text-center mb-4"
+                    className="text-[var(--color-sigma-blue)] text-center mb-4"
                 >
                     Transform Your Career Today
                 </Heading>
@@ -60,7 +60,7 @@ const LearningJourney: React.FC = () => {
                     as="p"
                     size="lg"
                     weight="normal"
-                    className="text-center mb-12 max-w-3xl mx-auto"
+                    className="text-center mb-12 max-w-3xl mx-auto text-gray-600"
                 >
                     Looking to become a sought-after data science professional? You've found the perfect launchpad! At Sigma Africa, we offer cutting-edge, hands-on training, expert mentorship, and real-world experience to supercharge your journey in data science.
                 </Text>
@@ -70,9 +70,9 @@ const LearningJourney: React.FC = () => {
                         <div
                             key={index}
                             className={`${module.featured
-                                ? 'bg-[var(--color-migenta)] text-white'
-                                : 'bg-gray-800 text-white hover:bg-gray-700'
-                                } p-8 rounded-lg transition-all duration-300 ${!module.featured && 'border-2 border-transparent hover:border-[var(--color-migenta)]'
+                                ? 'bg-[var(--color-migenta)] text-white shadow-lg'
+                                : 'bg-white text-[var(--color-sigma-blue)] hover:shadow-md'
+                                } p-8 rounded-lg transition-all duration-300 border border-gray-100 ${!module.featured && 'hover:border-[var(--color-migenta)]'
                                 }`}
                         >
                             <div className="mb-4">{module.icon}</div>
@@ -80,11 +80,11 @@ const LearningJourney: React.FC = () => {
                                 level={3}
                                 size="xl"
                                 weight="bold"
-                                className="mb-3"
+                                className={`mb-3 ${module.featured ? 'text-white' : 'text-[var(--color-sigma-blue)]'}`}
                             >
                                 {module.title}
                             </Heading>
-                            <Text as="p" size="base" weight="normal" className={module.featured ? 'text-white' : 'text-gray-300'}>
+                            <Text as="p" size="base" weight="normal" className={module.featured ? 'text-white' : 'text-gray-600'}>
                                 {module.description}
                             </Text>
                             {!module.featured && (

@@ -4,6 +4,7 @@ import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';
 import { useForm } from '@inertiajs/react';
 import { toast } from 'react-toastify';
+import FormSuccess from '@/components/ui/FormSuccess';
 import sigmaLogo from '../../../../../public/sigmaicon.png';
 
 interface ServiceContactFormProps {
@@ -11,6 +12,7 @@ interface ServiceContactFormProps {
 }
 
 const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => {
+    const [submitted, setSubmitted] = useState(false);
     const { data, setData, post, processing, reset, errors } = useForm({
         name: '',
         phone: '',
@@ -34,6 +36,7 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
         post('/services/consultation', {
             onSuccess: () => {
                 reset();
+                setSubmitted(true);
                 toast.success('Consultation request submitted successfully!');
             },
         });
@@ -46,7 +49,7 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
     ];
 
     return (
-        <section className="py-16 px-4">
+        <section id="consult" className="py-16 px-4">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="relative">
@@ -58,7 +61,7 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
 
                         <div className="rounded-lg overflow-hidden shadow-2xl mb-8">
                             <img
-                                src={imageSrc || '/service-consultancy.webp'}
+                                src={imageSrc || '/images/services_team.png'}
                                 alt="Service Consultancy"
                                 className="w-full h-96 object-cover"
                                 onError={(e) => {
@@ -70,145 +73,108 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
 
                         <div className="grid grid-cols-3 gap-4">
                             {statistics.map((stat, index) => (
-                                <div key={index} className="text-left">
-                                    <Heading
-                                        level={3}
-                                        size="3xl"
-                                        weight="bold"
-                                        className="text-[var(--color-migenta)] mb-1"
-                                    >
-                                        {stat.value}
-                                    </Heading>
-                                    <Text as="p" size="sm" weight="normal" className="">
-                                        {stat.label}
-                                    </Text>
+                                <div key={index} className="text-center p-4 bg-white rounded-xl shadow-lg border-b-4 border-[var(--color-migenta)]">
+                                    <div className="text-2xl font-bold text-[var(--color-sigma-blue)]">{stat.value}</div>
+                                    <div className="text-xs text-gray-600 font-medium uppercase tracking-wider">{stat.label}</div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="">
-                        <Heading level={2} size="4xl" weight="bold" className="mb-2">
-                            Ready To Scale?
-                        </Heading>
-                        <Heading level={3} size="4xl" weight="bold" className="mb-4 text-[var(--color-migenta)]">
-                            Consult With Our Experts
-                        </Heading>
-                        <Text as="p" size="base" weight="normal" className="mb-8">
-                            Take the first step towards data-driven success. Reach out to discuss your project or business needs today.
-                        </Text>
-
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label htmlFor="name" className="block mb-2">
-                                        <Text as="p" size="sm" weight="semibold">
-                                            Full Name
-                                        </Text>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        placeholder="Full Name"
-                                        value={data.name}
-                                        onChange={(e) =>
-                                            setData('name', e.target.value)
-                                        }
-                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        required
-                                    />
+                    <div className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 min-h-[500px] flex flex-col justify-center">
+                        {submitted ? (
+                            <FormSuccess
+                                title="Consultation Requested!"
+                                message="Thank you for your interest in our services. Our experts will review your request and get back to you shortly."
+                                steps={[
+                                    "A specialist will review your requirements.",
+                                    "We'll schedule a call to discuss your goals.",
+                                    "You'll receive a custom proposal and roadmap."
+                                ]}
+                            />
+                        ) : (
+                            <>
+                                <div className="mb-8">
+                                    <Heading level={3} size="4xl" weight="bold" className="mb-4 text-[var(--color-sigma-blue)]">
+                                        Consult With Our Experts
+                                    </Heading>
+                                    <div className="h-1.5 w-20 bg-[var(--color-migenta)] rounded-full"></div>
                                 </div>
 
-                                <div>
-                                    <label htmlFor="phone" className="block mb-2">
-                                        <Text as="p" size="sm" weight="semibold">
-                                            Phone Number
-                                        </Text>
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        placeholder="Phone Number"
-                                        value={data.phone}
-                                        onChange={(e) =>
-                                            setData('phone', e.target.value)
-                                        }
-                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        required
-                                    />
-                                </div>
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-1">
+                                            <label className="text-sm font-bold text-gray-700 ml-1">Name</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                placeholder="Your Name"
+                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-[var(--color-migenta)] focus:bg-white outline-none transition-all"
+                                                value={data.name}
+                                                onChange={e => setData('name', e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-sm font-bold text-gray-700 ml-1">Phone</label>
+                                            <input
+                                                type="tel"
+                                                required
+                                                placeholder="Phone Number"
+                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-[var(--color-migenta)] focus:bg-white outline-none transition-all"
+                                                value={data.phone}
+                                                onChange={e => setData('phone', e.target.value)}
+                                            />
+                                        </div>
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="email" className="block mb-2">
-                                        <Text as="p" size="sm" weight="semibold">
-                                            Business Email
-                                        </Text>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        placeholder="Email Address"
-                                        value={data.email}
-                                        onChange={(e) =>
-                                            setData('email', e.target.value)
-                                        }
-                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none"
-                                        required
-                                    />
-                                </div>
+                                    <div className="space-y-1">
+                                        <label className="text-sm font-bold text-gray-700 ml-1">Email</label>
+                                        <input
+                                            type="email"
+                                            required
+                                            placeholder="Your Email"
+                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-[var(--color-migenta)] focus:bg-white outline-none transition-all"
+                                            value={data.email}
+                                            onChange={e => setData('email', e.target.value)}
+                                        />
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="service" className="block mb-2">
-                                        <Text as="p" size="sm" weight="semibold">
-                                            Service of Interest
-                                        </Text>
-                                    </label>
-                                    <select
-                                        id="service"
-                                        value={data.service}
-                                        onChange={(e) =>
-                                            setData('service', e.target.value)
-                                        }
-                                        className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none h-[48px]"
-                                        required
+                                    <div className="space-y-1">
+                                        <label className="text-sm font-bold text-gray-700 ml-1">Service Required</label>
+                                        <select
+                                            required
+                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-[var(--color-migenta)] focus:bg-white outline-none transition-all"
+                                            value={data.service}
+                                            onChange={e => setData('service', e.target.value)}
+                                        >
+                                            <option value="" disabled>Select a service</option>
+                                            {services.map((service, index) => (
+                                                <option key={index} value={service}>{service}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label className="text-sm font-bold text-gray-700 ml-1">Tell us more</label>
+                                        <textarea
+                                            rows={4}
+                                            placeholder="Tell us about your project or inquiry..."
+                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-[var(--color-migenta)] focus:bg-white outline-none transition-all resize-none"
+                                            value={data.message}
+                                            onChange={e => setData('message', e.target.value)}
+                                        ></textarea>
+                                    </div>
+
+                                    <PrimaryButton
+                                        type="submit"
+                                        disabled={processing}
+                                        className="w-full bg-[var(--color-migenta)] text-white font-bold py-4 rounded-xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                                     >
-                                        <option value="" disabled>Select a service</option>
-                                        {services.map((service, index) => (
-                                            <option key={index} value={service}>
-                                                {service}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block mb-2">
-                                    <Text as="p" size="sm" weight="semibold">
-                                        Brief Project Description
-                                    </Text>
-                                </label>
-                                <textarea
-                                    id="message"
-                                    placeholder="Tell us about your project or consultation needs..."
-                                    value={data.message}
-                                    onChange={(e) =>
-                                        setData('message', e.target.value)
-                                    }
-                                    rows={5}
-                                    className="w-full px-4 py-3 rounded-md bg-white text-gray-900 border-none ring-2 ring-[var(--color-migenta)] outline-none resize-none"
-                                    required
-                                />
-                            </div>
-
-                            <PrimaryButton
-                                type="submit"
-                                loading={processing}
-                                className="w-full bg-[var(--color-migenta)] text-white px-8 py-4 rounded-md font-semibold hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {processing ? 'Submitting...' : 'Request Consultation'}
-                            </PrimaryButton>
-                        </form>
+                                        {processing ? 'Submitting...' : 'Request Consultation'}
+                                    </PrimaryButton>
+                                </form>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
