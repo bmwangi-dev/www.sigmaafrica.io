@@ -1,4 +1,4 @@
-// import sigmaLogo from '../../../../public/sigma-logo.png';
+// import sigmaLogo from '../../../../public/sigma-logo.webp';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/ui/Header';
 import { Link } from '@inertiajs/react';

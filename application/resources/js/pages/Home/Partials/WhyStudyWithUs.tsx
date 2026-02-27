@@ -1,4 +1,4 @@
-import StudyWithUsImage from '../../../../../public/images/study_with_us.png'
+import StudyWithUsImage from '../../../../../public/images/study_with_us.webp'
 import Heading from '@/components/Typography/Heading';
 import Text from '@/components/Typography/Text';
 import PrimaryButton from '@/components/Typography/PrimaryButton';

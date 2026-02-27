@@ -15,7 +15,7 @@ const TeamProfile: React.FC<TeamProfileProps> = ({
     className = '',
     animationDelay = 0
 }) => {
-    const defaultImage = '/images/team/default-avatar.jpg';
+    const defaultImage = '/images/team/default-avatar.webp';
 
     return (
         <div

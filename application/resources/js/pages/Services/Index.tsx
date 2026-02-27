@@ -6,8 +6,8 @@ import Text from '@/components/Typography/Text';
 import { CheckCircle2, Globe, Layout, Search, Megaphone, TrendingUp, Briefcase } from 'lucide-react';
 import { Header } from '@/components/ui/Header';
 
-import studentImg from '../../../../public/images/services_team.png';
-import dsImg from '../../../../public/images/about_sigma.png';
+import studentImg from '../../../../public/images/services_team.webp';
+import dsImg from '../../../../public/images/about_sigma.webp';
 
 export default function Index() {
     const servicesList = [

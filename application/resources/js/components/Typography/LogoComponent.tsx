@@ -14,14 +14,14 @@ const LogoComponent = ({
 
   switch (type) {
     case 'mark':
-      src = '/images/logo.png';
+      src = '/images/logo.webp';
       break;
     case 'fullWhite':
-      src = '/images/logo-with-text-white.png';
+      src = '/images/logo-with-text-white.webp';
       break;
     case 'fullColor':
     default:
-      src = '/images/logo-with-text-colored.png';
+      src = '/images/logo-with-text-colored.webp';
       break;
   }
 

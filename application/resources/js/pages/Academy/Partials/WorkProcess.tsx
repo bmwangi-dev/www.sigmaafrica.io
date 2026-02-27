@@ -79,7 +79,7 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="col-span-2 rounded-lg overflow-hidden shadow-lg">
                             <img
-                                src={images[0] || '/placeholder-group.jpg'}
+                                src={images[0] || '/placeholder-group.webp'}
                                 alt="Academy group photo"
                                 className="w-full h-64 object-cover"
                                 onError={(e) => {
@@ -91,7 +91,7 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
 
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <img
-                                src={images[1] || '/placeholder-classroom.jpg'}
+                                src={images[1] || '/placeholder-classroom.webp'}
                                 alt="Academy classroom"
                                 className="w-full h-40 object-cover"
                                 onError={(e) => {
@@ -102,7 +102,7 @@ const WorkProcess: React.FC<WorkProcessProps> = ({ images = [] }) => {
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <img
-                                src={images[2] || '/placeholder-students.jpg'}
+                                src={images[2] || '/placeholder-students.webp'}
                                 alt="Academy students"
                                 className="w-full h-40 object-cover"
                                 onError={(e) => {

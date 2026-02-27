@@ -3,10 +3,10 @@ import Heading from "@/components/Typography/Heading";
 import Text from "@/components/Typography/Text";
 
 const partners = [
-    { name: "JKUAT", logo: "/jkuat.png" },
-    { name: "Technical University of Kenya", logo: "/tuk.png" },
+    { name: "JKUAT", logo: "/jkuat.webp" },
+    { name: "Technical University of Kenya", logo: "/tuk.webp" },
     { name: "University Of Nairobi", logo: "/university-of-nairobi.webp" },
-    { name: "Sinapis Group", logo: "/sinapis.png" },
+    { name: "Sinapis Group", logo: "/sinapis.webp" },
 ];
 
 const OurPartners: React.FC = () => {

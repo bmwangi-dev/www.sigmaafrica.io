@@ -9,21 +9,21 @@ export default function Index() {
     const communities = [
         {
             title: "Community Stories",
-            image: "/images/academy_group.png",
+            image: "/images/academy_group.webp",
             description: "Discover the inspiring journeys of our community members. From students to professionals, hear how Sigma Africa has transformed their careers and lives. Our community is a melting pot of ideas, experiences, and success stories waiting to be shared.",
             link: "#",
             reverse: false
         },
         {
             title: "Data Science",
-            image: "/images/about_sigma.png",
+            image: "/images/about_sigma.webp",
             description: "Dive into the world of data. Join a vibrant community of data scientists, analysts, and enthusiasts. Access exclusive workshops, hackathons, and resources designed to sharpen your skills and keep you ahead in the rapidly evolving field of Data Science.",
             link: "#",
             reverse: true
         },
         {
             title: "Zindua", // Software Development
-            image: "/images/academy_student.png",
+            image: "/images/academy_student.webp",
             description: "Build the future with code. The Zindua community is the home for software developers, engineers, and creators. Collaborate on open-source projects, learn new frameworks, and connect with mentors who can guide you on your path to becoming a world-class developer.",
             link: "#",
             reverse: false

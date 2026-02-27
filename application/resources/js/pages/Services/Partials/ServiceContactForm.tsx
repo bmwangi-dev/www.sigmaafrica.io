@@ -5,7 +5,7 @@ import PrimaryButton from '@/components/Typography/PrimaryButton';
 import { useForm } from '@inertiajs/react';
 import { toast } from 'react-toastify';
 import FormSuccess from '@/components/ui/FormSuccess';
-import sigmaLogo from '../../../../../public/sigmaicon.png';
+import sigmaLogo from '../../../../../public/sigmaicon.webp';
 
 interface ServiceContactFormProps {
     imageSrc?: string;
@@ -61,7 +61,7 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
 
                         <div className="rounded-lg overflow-hidden shadow-2xl mb-8">
                             <img
-                                src={imageSrc || '/images/services_team.png'}
+                                src={imageSrc || '/images/services_team.webp'}
                                 alt="Service Consultancy"
                                 className="w-full h-96 object-cover"
                                 onError={(e) => {

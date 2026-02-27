@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePage, Link as InertiaLink, router } from '@inertiajs/react';
 import NavItem from '@/components/ui/NavItem';
-import sigmaLogo from '../../../public/sigma-logo.png';
+import sigmaLogo from '../../../public/sigma-logo.webp';
 import { Menu, X } from 'lucide-react';
 import Link from '@/components/Typography/Link';
 import PrimaryButton from '@/components/Typography/PrimaryButton';

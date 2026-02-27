@@ -27,7 +27,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                     <div className="relative">
                         <div className="overflow-hidden rounded-lg shadow-2xl">
                             <img
-                                src={imageSrc || '/placeholder-student.jpg'}
+                                src={imageSrc || '/placeholder-student.webp'}
                                 alt="Student learning"
                                 className="w-full h-[400px] object-cover"
                                 onError={(e) => {

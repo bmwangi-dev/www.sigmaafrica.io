@@ -6,8 +6,8 @@ import MeetTheTeam from "./Partials/MeetTheTeam";
 import FutureSection from "./Partials/FutureSection";
 import HowWeEmpower from "./Partials/HowWeEmpower";
 import OurPartners from "./Partials/OurPartner";
-import Datascience from "../../../../public/images/about_sigma.png";
-import howweempower from "../../../../public/howweempower.jpeg";
+import Datascience from "../../../../public/images/about_sigma.webp";
+import howweempower from "../../../../public/howweempower.webp";
 import { TeamData } from "@/types/Team";
 
 interface AboutUsProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePage, Link as InertiaLink, router } from '@inertiajs/react';
 import { PageProps } from '@inertiajs/core';
-import sigmaLogo from '../../../public/sigma-logo.png';
+import sigmaLogo from '../../../public/sigma-logo.webp';
 import { Button } from '@/components/ui/button';
 
 const AuthenticatedNavBar: React.FC = () => {
