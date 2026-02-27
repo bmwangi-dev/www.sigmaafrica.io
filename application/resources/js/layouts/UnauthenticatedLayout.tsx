@@ -13,8 +13,10 @@ interface UnauthenticatedLayoutProps {
 export default function UnauthenticatedLayout({ children, onlyHome = false }: UnauthenticatedLayoutProps) {
     return (
         <div className="flex min-h-screen flex-col">
-            <AcademyAdvert />
-            <PublicNavBar onlyHome={onlyHome} />
+            <div className="sticky top-0 z-50">
+                <AcademyAdvert />
+                <PublicNavBar onlyHome={onlyHome} />
+            </div>
             <main className="flex-1">
                 {children}
                 <BackToTop />
