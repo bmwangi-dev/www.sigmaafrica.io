@@ -56,7 +56,7 @@ const PublicNavBar: React.FC<PublicNavBarProps> = ({ onlyHome = false }) => {
         <nav className="bg-[var(--color-secondary)] shadow-md relative w-full">
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center">
-                    <img src={sigmaLogo} alt="Sigma's logo" className="h-16" />
+                    <img loading="lazy" src={sigmaLogo} alt="Sigma's logo" className="h-16" />
                 </Link>
 
                 <PrimaryButton

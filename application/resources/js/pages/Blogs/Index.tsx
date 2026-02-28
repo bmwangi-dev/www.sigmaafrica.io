@@ -50,7 +50,7 @@ export default function Index() {
                                 {/* Image Section */}
                                 <div className="h-64 overflow-hidden relative bg-[var(--color-sigma-blue)]">
                                     <div className="absolute inset-0 bg-teal-400 opacity-20 group-hover:opacity-0 transition-opacity duration-300"></div>
-                                    <img
+                                    <img loading="lazy"
                                         src={blog.image}
                                         alt="Blog Thumbnail"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"

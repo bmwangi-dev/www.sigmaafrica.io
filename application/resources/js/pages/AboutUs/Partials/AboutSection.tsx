@@ -19,7 +19,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
                     <div className="relative">
                         <div className="overflow-hidden rounded-2xl shadow-xl">
-                            <img
+                            <img loading="lazy"
                                 src={imageSrc}
                                 alt="About Sigma Africa"
                                 className="w-full h-[400px] object-cover"

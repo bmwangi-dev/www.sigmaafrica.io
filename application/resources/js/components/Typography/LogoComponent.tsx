@@ -25,7 +25,7 @@ const LogoComponent = ({
       break;
   }
 
-  return <img src={src} alt={alt} className={className} />;
+  return <img loading="lazy" src={src} alt={alt} className={className} />;
 };
 
 export default LogoComponent;

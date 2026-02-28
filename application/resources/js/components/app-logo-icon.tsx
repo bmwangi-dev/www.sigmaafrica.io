@@ -6,7 +6,7 @@ interface AppLogoIconProps {
 
 export default function AppLogoIcon({ className }: AppLogoIconProps) {
     return (
-        <img
+        <img loading="lazy"
             src="/sigma-logo.webp"
             alt="Sigma Africa"
             className={cn("h-8 w-auto", className)}

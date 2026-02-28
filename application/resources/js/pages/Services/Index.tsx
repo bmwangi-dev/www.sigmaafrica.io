@@ -98,10 +98,10 @@ export default function Index() {
 
                         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[500px]">
                             <div className="absolute top-0 right-0 w-2/3 h-2/3 rounded-3xl overflow-hidden shadow-xl ring-4 ring-[var(--color-migenta)] z-10">
-                                <img src={studentImg} alt="Team collaboration" className="w-full h-full object-cover" />
+                                <img loading="lazy" src={studentImg} alt="Team collaboration" className="w-full h-full object-cover" />
                             </div>
                             <div className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-3xl overflow-hidden shadow-xl ring-4 ring-[var(--color-migenta)] z-20">
-                                <img src={dsImg} alt="Data Analysis" className="w-full h-full object-cover" />
+                                <img loading="lazy" src={dsImg} alt="Data Analysis" className="w-full h-full object-cover" />
                             </div>
                             <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[var(--color-migenta)] rounded-2xl -z-10 opacity-20 transform -translate-y-1/2 -rotate-12"></div>
                             <div className="absolute bottom-10 right-10 w-16 h-16 bg-[var(--color-primary)] rounded-full z-30 opacity-80"></div>

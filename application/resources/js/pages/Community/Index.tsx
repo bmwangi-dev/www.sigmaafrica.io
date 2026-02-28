@@ -64,7 +64,7 @@ export default function Index() {
                                 <div className="w-full lg:w-1/2">
                                     <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
                                         <div className="absolute inset-0 bg-[var(--color-sigma-blue)] opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-10"></div>
-                                        <img
+                                        <img loading="lazy"
                                             src={community.image}
                                             alt={community.title}
                                             className="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700"

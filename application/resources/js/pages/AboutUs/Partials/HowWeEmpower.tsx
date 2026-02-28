@@ -29,7 +29,7 @@ const HowWeEmpower: React.FC<HowWeEmpowerProps> = ({
 
                     <div className="relative">
                         <div className="overflow-hidden rounded-2xl shadow-xl">
-                            <img
+                            <img loading="lazy"
                                 src={imageSrc}
                                 alt="Empowering Data-Driven Growth"
                                 className="w-full h-[500px] object-cover"

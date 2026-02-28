@@ -55,12 +55,12 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({ imageSrc }) => 
                     <div className="relative">
                         <div className="absolute -top-8 -left-8 bg-[var(--color-primary-note)] rounded-full w-24 h-24 flex items-center justify-center shadow-lg z-10">
                             <div className="text-center">
-                                <img src={sigmaLogo} alt="Sigma Logo" className="w-16 h-16 object-contain" />
+                                <img loading="lazy" src={sigmaLogo} alt="Sigma Logo" className="w-16 h-16 object-contain" />
                             </div>
                         </div>
 
                         <div className="rounded-lg overflow-hidden shadow-2xl mb-8">
-                            <img
+                            <img loading="lazy"
                                 src={imageSrc || '/images/services_team.webp'}
                                 alt="Service Consultancy"
                                 className="w-full h-96 object-cover"

@@ -11,7 +11,7 @@ const Avatar: React.FC<AvatarProps> = ({ name, image }) => {
   )}`;
 
   return (
-    <img
+    <img loading="lazy"
       src={image || fallback}
       alt={name}
       className="w-12 h-12 rounded-full border"

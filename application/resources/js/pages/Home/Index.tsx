@@ -2,7 +2,8 @@ import WhyStudyWithUs from "./Partials/WhyStudyWithUs";
 import { Head } from "@inertiajs/react";
 import { Header } from "@/components/ui/Header";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
-import Testimonials from "@/layouts/Testimonials";
+import React, { lazy } from "react";
+const Testimonials = lazy(() => import("@/layouts/Testimonials"));
 export default function Index() {
     return (
         <UnauthenticatedLayout>
@@ -21,7 +22,7 @@ export default function Index() {
             >
             </Header>
             <WhyStudyWithUs />
-            <Testimonials/>
+            <Testimonials />
         </UnauthenticatedLayout>
 
     );

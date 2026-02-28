@@ -212,7 +212,7 @@ const NotificationCard = () => {
             <div className="p-4">
                 {notification.image_url && (
                     <div className="mb-3 relative overflow-hidden rounded-lg">
-                        <img
+                        <img loading="lazy"
                             src={notification.image_url}
                             alt="Notification"
                             className="w-full h-32 object-cover"

@@ -2,10 +2,13 @@ import { Head } from "@inertiajs/react";
 import { Header } from "@/components/ui/Header";
 import UnauthenticatedLayout from "@/layouts/UnauthenticatedLayout";
 import AboutSection from "./Partials/AboutSection";
-import MeetTheTeam from "./Partials/MeetTheTeam";
-import FutureSection from "./Partials/FutureSection";
-import HowWeEmpower from "./Partials/HowWeEmpower";
-import OurPartners from "./Partials/OurPartner";
+import React, { lazy } from "react";
+
+const MeetTheTeam = lazy(() => import("./Partials/MeetTheTeam"));
+const FutureSection = lazy(() => import("./Partials/FutureSection"));
+const HowWeEmpower = lazy(() => import("./Partials/HowWeEmpower"));
+const OurPartners = lazy(() => import("./Partials/OurPartner"));
+
 import Datascience from "../../../../public/images/about_sigma.webp";
 import howweempower from "../../../../public/howweempower.webp";
 import { TeamData } from "@/types/Team";

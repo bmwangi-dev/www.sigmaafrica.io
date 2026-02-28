@@ -26,7 +26,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="relative">
                         <div className="overflow-hidden rounded-lg shadow-2xl">
-                            <img
+                            <img loading="lazy"
                                 src={imageSrc || '/placeholder-student.webp'}
                                 alt="Student learning"
                                 className="w-full h-[400px] object-cover"

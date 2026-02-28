@@ -70,7 +70,7 @@ const WhyStudyWithUs = () => {
                     <div className="flex-1 flex flex-col gap-6 w-full lg:sticky lg:top-24">
                         <div className="relative group">
                             <div className="overflow-hidden rounded-2xl shadow-xl">
-                                <img
+                                <img loading="lazy"
                                     src={StudyWithUsImage}
                                     alt="Learning at Sigma Africa"
                                     className="w-full h-[350px] lg:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"

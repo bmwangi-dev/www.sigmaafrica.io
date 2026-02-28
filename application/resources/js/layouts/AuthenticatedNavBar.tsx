@@ -21,7 +21,7 @@ const AuthenticatedNavBar: React.FC = () => {
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
 
                 <InertiaLink href="/" className="flex items-center">
-                    <img src={sigmaLogo} alt="Sigma's logo" className="h-12" />
+                    <img loading="lazy" src={sigmaLogo} alt="Sigma's logo" className="h-12" />
                 </InertiaLink>
 
                 {user && (

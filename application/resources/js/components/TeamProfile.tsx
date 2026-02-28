@@ -23,7 +23,7 @@ const TeamProfile: React.FC<TeamProfileProps> = ({
             style={{ animationDelay: `${animationDelay}s` }}
         >
             <div className="relative mb-4">
-                <img
+                <img loading="lazy"
                     src={member.image_path || defaultImage}
                     alt={member.name}
                     className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-gray-200 hover:border-[var(--color-migenta)] transition-colors duration-300"

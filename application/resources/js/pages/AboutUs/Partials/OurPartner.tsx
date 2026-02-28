@@ -28,7 +28,7 @@ const OurPartners: React.FC = () => {
                             key={idx}
                             className="bg-white shadow-sm rounded-lg p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300"
                         >
-                            <img
+                            <img loading="lazy"
                                 src={partner.logo}
                                 alt={partner.name}
                                 className="mb-4"
