@@ -98,7 +98,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ imageSrc }) => {
                             </Text>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {statistics.map((stat, index) => (
                                 <div key={index} className="p-6 rounded-2xl bg-white shadow-lg shadow-gray-200/50 border border-gray-100 flex flex-col items-center text-center">
                                     <div className="w-12 h-12 rounded-xl bg-[var(--color-migenta)]/10 flex items-center justify-center text-[var(--color-migenta)] mb-4">
@@ -112,6 +112,18 @@ const FAQSection: React.FC<FAQSectionProps> = ({ imageSrc }) => {
                                     </Text>
                                 </div>
                             ))}
+                        </div>
+                        <div className="mt-10 p-6 rounded-2xl bg-[var(--color-primary)] text-white flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div>
+                                <Heading level={4} size="lg" weight="bold">Still have questions?</Heading>
+                                <Text size="sm" className="opacity-80">Can't find the answer you're looking for?</Text>
+                            </div>
+                            <a
+                                href="/contact"
+                                className="px-6 py-3 bg-[var(--color-migenta)] text-white rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-lg shadow-black/10 text-center"
+                            >
+                                Contact Support
+                            </a>
                         </div>
                     </div>
 
@@ -127,19 +139,6 @@ const FAQSection: React.FC<FAQSectionProps> = ({ imageSrc }) => {
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 />
                             ))}
-                        </div>
-
-                        <div className="mt-10 p-6 rounded-2xl bg-[var(--color-primary)] text-white flex flex-col md:flex-row items-center justify-between gap-6">
-                            <div>
-                                <Heading level={4} size="lg" weight="bold">Still have questions?</Heading>
-                                <Text size="sm" className="opacity-80">Can't find the answer you're looking for?</Text>
-                            </div>
-                            <a
-                                href="/contact"
-                                className="px-6 py-3 bg-[var(--color-migenta)] text-white rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-lg shadow-black/10 text-center"
-                            >
-                                Contact Support
-                            </a>
                         </div>
                     </div>
 

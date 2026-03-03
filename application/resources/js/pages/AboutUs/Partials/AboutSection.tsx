@@ -36,7 +36,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                             {bigTitle}
                         </Heading>
                         <div className="space-y-4">
-                            <Text as="p" size="lg" weight="medium" className="text-gray-700 leading-relaxed">
+                            <Text as="p" size="base" weight="normal" className="text-gray-600 leading-relaxed">
                                 {description}
                             </Text>
                             <Text as="p" size="base" weight="normal" className="text-gray-600 leading-relaxed">

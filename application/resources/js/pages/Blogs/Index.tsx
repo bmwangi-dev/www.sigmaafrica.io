@@ -30,7 +30,13 @@ export default function Index() {
 
     return (
         <UnauthenticatedLayout>
-            <Head title="Blogs" />
+            <Head>
+                <title>Blog - Sigma Africa | Tech Insights & Data Science Trends</title>
+                <meta name="description" content="Stay updated with the latest trends, stories, and insights from the world of technology, data science, and AI. Expert articles from Sigma Africa." />
+                <meta property="og:title" content="Sigma Africa Blog - Tech Insights" />
+                <meta property="og:description" content="Stay updated with the latest trends in technology, data science, and AI." />
+                <meta property="og:type" content="blog" />
+            </Head>
             <Header
                 heading="Our Blogs"
                 subheading={

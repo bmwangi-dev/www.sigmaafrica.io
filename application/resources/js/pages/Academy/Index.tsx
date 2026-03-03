@@ -12,7 +12,13 @@ import trainersImage from "../../../../public/images/academy_trainers.webp";
 function Index() {
     return (
         <UnauthenticatedLayout>
-            <Head title="Academy" />
+            <Head>
+                <title>Sigma Africa Academy - Data Science & Machine Learning Training</title>
+                <meta name="description" content="Master data science, machine learning, and analytics through hands-on training, expert mentorship, and real-world projects. Empowering Africa's next generation of data scientists." />
+                <meta property="og:title" content="Sigma Africa Academy - Empowering Data Scientists" />
+                <meta property="og:description" content="Master data science, machine learning, and analytics through hands-on training and expert mentorship." />
+                <meta property="og:type" content="website" />
+            </Head>
             <Header
                 heading={
                     <>

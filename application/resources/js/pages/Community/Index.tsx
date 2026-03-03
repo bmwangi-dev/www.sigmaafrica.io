@@ -32,7 +32,13 @@ export default function Index() {
 
     return (
         <UnauthenticatedLayout>
-            <Head title="Community" />
+            <Head>
+                <title>Community - Sigma Africa | Join Africa's Tech Community</title>
+                <meta name="description" content="Join thousands shaping the future of technology in Africa. Connect with data scientists, software developers, and tech enthusiasts in our vibrant communities." />
+                <meta property="og:title" content="Sigma Africa Community - Connect & Grow" />
+                <meta property="og:description" content="Join thousands shaping the future of technology in Africa. Connect with data scientists and developers." />
+                <meta property="og:type" content="website" />
+            </Head>
             <Header
                 heading="Community"
                 subheading={

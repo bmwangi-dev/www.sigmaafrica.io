@@ -20,7 +20,13 @@ interface AboutUsProps {
 export default function Index({ teams }: AboutUsProps) {
     return (
         <UnauthenticatedLayout>
-            <Head title="About Us" />
+            <Head>
+                <title>About Us - Sigma Africa | Data Science Excellence in Africa</title>
+                <meta name="description" content="Founded in 2022, Sigma Africa is a leading collective dedicated to shaping Africa's data-driven future. We build skilled talent, foster innovation, and strengthen the continent's data ecosystem." />
+                <meta property="og:title" content="About Sigma Africa - 3 Years of Impact" />
+                <meta property="og:description" content="Driving Data Science Excellence in Africa. We empower industries with data-driven insights and transformative solutions." />
+                <meta property="og:type" content="website" />
+            </Head>
             <Header
                 heading={
                     <>

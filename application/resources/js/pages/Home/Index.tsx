@@ -7,7 +7,13 @@ const Testimonials = lazy(() => import("@/layouts/Testimonials"));
 export default function Index() {
     return (
         <UnauthenticatedLayout>
-            <Head title="Home" />
+            <Head>
+                <title>Sigma Africa - Data-Driven Innovation & Digital Transformation</title>
+                <meta name="description" content="Transform industries with data-driven innovation. Partner with Sigma Africa to unlock growth and maximize potential through analytics and digital transformation." />
+                <meta property="og:title" content="Sigma Africa - Your Growth Partner" />
+                <meta property="og:description" content="Transform industries with data-driven innovation. Partner with Sigma Africa to unlock growth and maximize potential." />
+                <meta property="og:type" content="website" />
+            </Head>
             <Header
                 heading={
                     <>

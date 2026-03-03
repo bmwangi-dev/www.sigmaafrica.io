@@ -10,6 +10,9 @@ import studentImg from '../../../../public/images/services_team.webp';
 import dsImg from '../../../../public/images/about_sigma.webp';
 
 export default function Index() {
+    const pageTitle = "Our Services - Sigma Africa | Digital & Business Solutions";
+    const pageDescription = "Comprehensive digital and business solutions: Web Development, Data Science, Digital Marketing, and Business Consultancy. Transform your organization with Sigma Africa.";
+
     const servicesList = [
         "Website Development",
         "Application Development",
@@ -54,7 +57,13 @@ export default function Index() {
 
     return (
         <UnauthenticatedLayout>
-            <Head title="Services" />
+            <Head>
+                <title>{pageTitle}</title>
+                <meta name="description" content={pageDescription} />
+                <meta property="og:title" content="Sigma Africa Services - 360° Business Solutions" />
+                <meta property="og:description" content={pageDescription} />
+                <meta property="og:type" content="website" />
+            </Head>
 
             <Header
                 heading="Our Services"
