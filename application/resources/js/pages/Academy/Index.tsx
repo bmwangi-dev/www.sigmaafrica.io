@@ -32,7 +32,7 @@ function Index() {
         <UnauthenticatedLayout>
             <Head>
                 <title>Academy - Sigma Africa | Our Programs</title>
-                <meta name="description" content="Explore Sigma Africa's educational programs in Data Science and Software Development. Empowering Africa's next generation of tech leaders." />
+                <meta name="description" content="Explore Sigma Africa's educational programs in Data Science and Software Development. Empowering Africa's rising generation of tech leaders." />
             </Head>
             <Header
                 heading={
@@ -40,7 +40,7 @@ function Index() {
                         Sigma Africa <span className="text-[var(--color-migenta)]">Academy</span>
                     </>
                 }
-                subheading="Empowering Africa's Next Generation of Tech Leaders"
+                subheading="Empowering Africa's Rising Generation of Tech Leaders"
                 description="We offer industry-leading programs designed to equip you with the skills needed to thrive in the modern digital economy."
                 className={{ background: "linear-gradient(90deg, #0a2540, #06659b)" }}
                 textColor="text-white"
