@@ -103,9 +103,25 @@ Route::get('/services', function () {
 })->name('services');
 
 
-Route::get('/skill-sparks/application', function () {
+Route::get('/academy/skillsparks', function () {
     return Inertia::render('Academy/SkillSpark/Index');
-})->name('skill-sparks.application');
+})->name('academy.skillsparks');
+
+Route::get('/academy/skillsparks/apply', function () {
+    return Inertia::render('Academy/SkillSpark/Apply');
+})->name('academy.skillsparks.apply');
+
+Route::get('/academy/zindua', function () {
+    return Inertia::render('Academy/Zindua/Index');
+})->name('academy.zindua');
+
+Route::get('/academy/zindua/apply', function () {
+    return Inertia::render('Academy/Zindua/Apply');
+})->name('academy.zindua.apply');
+
+Route::get('/skill-sparks/application', function () {
+    return redirect()->route('academy.skillsparks.apply');
+});
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/services/consultation', [ContactController::class, 'submitConsultation'])->name('services.consultation');

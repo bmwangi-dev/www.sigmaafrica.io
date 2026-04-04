@@ -81,9 +81,9 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ imageSrc }) => {
                             </div>
                         </div>
 
-                        <Link href="/skill-sparks/application">
+                        <Link href="/academy/skillsparks/apply">
                             <PrimaryButton className="bg-[var(--color-migenta)] text-white px-8 py-3 rounded-md font-semibold hover:bg-opacity-90 transition-all">
-                                Apply Now
+                                Apply for SkillSpark
                             </PrimaryButton>
                         </Link>
                     </div>
