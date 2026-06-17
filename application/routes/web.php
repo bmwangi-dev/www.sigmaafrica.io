@@ -59,24 +59,8 @@ Route::get('/about', function () {
             'created_at' => now()->toISOString(),
             'updated_at' => now()->toISOString(),
         ],
-        [
-            'id' => 4,
-            'name' => 'Mwangi Brian',
-            'contact_no' => '+254-791-948-842',
-            'email' => 'mwangibrian.dev@gmail.com',
-            'department' => 'Engineering',
-            'position' => 'CTO & Lead Developer',
-            'image_path' => '/mwangi.jpeg',
-            'socials' => [
-                ['type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/mwangi-brian-68732527b/'],
-            ],
-            'is_active' => true,
-            'sort_order' => 4,
-            'created_at' => now()->toISOString(),
-            'updated_at' => now()->toISOString(),
-        ],
     ];
-    
+
     return Inertia::render('AboutUs/Index', [
         'teams' => $teams
     ]);
