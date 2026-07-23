@@ -22,7 +22,7 @@ const AcademyAdvert = () => {
                     href="/academy/skillsparks"
                     className="flex items-center gap-2 bg-white text-[var(--color-primary)] px-5 py-2 rounded-full text-sm font-bold hover:bg-[var(--color-migenta)] hover:text-white transition-all duration-300 shadow-xl active:scale-95 group/btn"
                 >
-                    Enroll for SkillSpark 3.0
+                    Enroll for SkillSpark 3.1
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
             </div>

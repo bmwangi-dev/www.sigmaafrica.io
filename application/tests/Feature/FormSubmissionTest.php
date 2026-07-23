@@ -88,7 +88,7 @@ class FormSubmissionTest extends TestCase
                     ->once()
                     ->with(
                         Mockery::any(),
-                        'SKILLSPARKS 3.0!A:H',
+                        'SKILLSPARKS 3.1!A:H',
                         Mockery::on(function ($values) {
                             return $values[0] === 'Alice Brown' && str_contains($values[6], 'Excel');
                         })

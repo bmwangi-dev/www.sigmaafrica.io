@@ -32,10 +32,10 @@ class SkillSparkController extends Controller
 
         try {
             $spreadsheetId = config('services.google.spreadsheet_id');
-            $range = 'SKILLSPARKS 3.0!A:I'; 
+            $range = 'SKILLSPARKS 3.1!A:I'; 
 
             if ($spreadsheetId) {
-                $existingData = $this->googleSheets->getValues($spreadsheetId, 'SKILLSPARKS 3.0!B:C'); // Column B is Email, C is Phone
+                $existingData = $this->googleSheets->getValues($spreadsheetId, 'SKILLSPARKS 3.1!B:C'); // Column B is Email, C is Phone
                 
                 if (!empty($existingData)) {
                     foreach ($existingData as $row) {

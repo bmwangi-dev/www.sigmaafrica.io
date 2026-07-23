@@ -15,7 +15,7 @@ const ApplicationSuccess = () => {
             </Heading>
 
             <Text as="p" size="lg" className="text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">
-                Thank you for applying to the Sigma SkillSpark 3.0 program. We have received your details.
+                Thank you for applying to the Sigma SkillSpark 3.1 program. We have received your details.
             </Text>
 
             <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 max-w-md w-full mb-8 text-left">

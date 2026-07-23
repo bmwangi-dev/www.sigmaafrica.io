@@ -51,10 +51,10 @@ const ApplicationSection = () => {
                     <div className="lg:sticky lg:top-10 space-y-8">
                         <div className="space-y-4">
                             <div className="inline-block px-4 py-1 rounded-full bg-[var(--color-migenta)] text-white font-bold text-sm tracking-widest uppercase">
-                                Enrollment Open • Jan 2026
+                                Enrollment Open • Oct 2026
                             </div>
                             <Heading level={2} size="5xl" weight="bold" className="text-gray-900 leading-tight">
-                                Sigma <span className="text-[var(--color-migenta)]">SkillSpark 3.0</span>
+                                Sigma <span className="text-[var(--color-migenta)]">SkillSpark 3.1</span>
                             </Heading>
                             <Text as="p" size="xl" className="text-gray-600 max-w-xl">
                                 A definitive 9-week workshop designed to transform your career trajectory through data science.
@@ -94,7 +94,7 @@ const ApplicationSection = () => {
                                 <div className="space-y-3">
                                     <div className="flex justify-between text-sm border-b border-white/10 pb-2">
                                         <span className="text-gray-400">Orientation</span>
-                                        <span className="font-bold">March  2, 2026</span>
+                                        <span className="font-bold">October 5, 2026</span>
                                     </div>
                                     <div className="flex justify-between text-sm border-b border-white/10 pb-2">
                                         <span className="text-gray-400">Mpesa Till</span>
