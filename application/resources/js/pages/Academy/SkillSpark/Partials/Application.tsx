@@ -66,8 +66,8 @@ const ApplicationSection = () => {
                             {[
                                 { title: "Advanced Excel", time: "2 Weeks" },
                                 { title: "SQL Mastery", time: "1 Week" },
-                                { title: "PowerBI Viz", time: "2 Weeks" },
-                                { title: "Python Pro", time: "4 Weeks" },
+                                { title: "PowerBI For Data Viz", time: "2 Weeks" },
+                                { title: "Python Programming", time: "4 Weeks" },
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[var(--color-migenta)]">
                                     <CheckCircle2 className="text-[var(--color-migenta)] w-5 h-5 shrink-0" />
@@ -94,7 +94,7 @@ const ApplicationSection = () => {
                                 <div className="space-y-3">
                                     <div className="flex justify-between text-sm border-b border-white/10 pb-2">
                                         <span className="text-gray-400">Orientation</span>
-                                        <span className="font-bold">October 5, 2026</span>
+                                        <span className="font-bold">October 4, 2026</span>
                                     </div>
                                     <div className="flex justify-between text-sm border-b border-white/10 pb-2">
                                         <span className="text-gray-400">Mpesa Till</span>
@@ -171,7 +171,7 @@ const ApplicationSection = () => {
                                                 {['Yes', 'No', 'Maybe'].map((opt) => (
                                                     <button key={opt} type="button"
                                                         onClick={() => setData('schedule_commitment', opt)}
-                                                        className={`px-4 py-2 rounded-xl text-sm font-bold transition-all border-2 
+                                                        className={`px-4 py-2 rounded-xl text-sm font-bold transition-all border-2
                                                         ${data.schedule_commitment === opt
                                                                 ? 'bg-[var(--color-migenta)] text-white border-[var(--color-migenta)] shadow-md'
                                                                 : 'bg-white text-gray-500 border-gray-100 hover:border-gray-200'}`}

@@ -71,7 +71,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ imageSrc }) => {
     ];
 
     const statistics = [
-        { icon: <GraduationCap className="w-6 h-6" />, value: '150+', label: 'Total Alumni' },
+        { icon: <GraduationCap className="w-6 h-6" />, value: '300+', label: 'Total Alumni' },
         { icon: <Users className="w-6 h-6" />, value: '10+', label: 'Mentors' },
         { icon: <MessageCircle className="w-6 h-6" />, value: '24/7', label: 'Support' },
     ];
